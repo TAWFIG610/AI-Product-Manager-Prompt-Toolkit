@@ -16,6 +16,7 @@ Every prompt file in the `prompts/` directory contains:
 
 | # | Prompt File | Core Focus |
 |---|-------------|------------|
+| 0 | [00_ultimate_ai_pm_mega_prompt.md](file:///c:/Users/HP/Desktop/AI%20PM/prompts/00_ultimate_ai_pm_mega_prompt.md) | **The All-in-One Mega Prompt**: runs your entire product lifecycle from raw idea to tested, shipped feature in a single run. |
 | 1 | [01_deep_market_research.md](file:///c:/Users/HP/Desktop/AI%20PM/prompts/01_deep_market_research.md) | Competitor landscape, underserved segments, and entry strategies. |
 | 2 | [02_user_persona_generator.md](file:///c:/Users/HP/Desktop/AI%20PM/prompts/02_user_persona_generator.md) | High-fidelity, research-backed user personas with rich behavioral details. |
 | 3 | [03_prd_writer.md](file:///c:/Users/HP/Desktop/AI%20PM/prompts/03_prd_writer.md) | Complete, development-ready Product Requirements Document (PRD). |
