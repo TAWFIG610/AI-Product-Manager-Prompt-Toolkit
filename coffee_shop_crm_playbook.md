@@ -1,652 +1,554 @@
-# دليل المنتج الشامل: نظام إدارة علاقات العملاء للمقاهي (Coffee Shop CRM)
+# BeanFlow CRM: Coffee Shop Playbook
+*A Complete End-to-End Product Management Lifecycle Execution*
 
-هذا المستند يمثل المخرجات الكاملة والشاملة لتطبيق **الميجا برومبت (AI PM Mega Prompt)** من منظور مدير منتج ذو خبرة 100 عام. تم تصميم هذا النظام خصيصاً للمقاهي المستقلة لمساعدتها على زيادة ولاء العملاء وتخصيص تجربتهم.
-
----
-
-## مدخلات النظام (Product Core Inputs)
-
-*   **اسم المنتج المقترح**: BeanLoyal CRM
-*   **فكرة المنتج**: نظام إدارة علاقات عملاء (CRM) وبرنامج ولاء ذكي للمقاهي المستقلة، يتكامل مع نقاط البيع (POS) ويسمح لأصحاب المقاهي بإرسال عروض مخصصة بناءً على سلوك الشراء، وجمع تقييمات العملاء، وتحليل فترات الركود والنشاط لتوجيه عروض تسويقية ديناميكية.
-*   **المستخدم المستهدف**: أصحاب ومدراء المقاهي المستقلة (B2B)، والعملاء المترددين على المقاهي (B2C) عبر تطبيق مصغر أو محفظة الجوال.
-*   **السوق**: أنظمة نقاط البيع والتسويق لقطاع التجزئة والأغذية والمشروبات (Food & Beverage SaaS / POS Loyalty).
-*   **مرحلة المنتج**: فكرة / ما قبل الإطلاق (Idea / Pre-launch).
+This document showcases the execution of the **Ultimate AI PM Mega Prompt** for **BeanFlow CRM**, an intelligent loyalty and customer relationship management system designed specifically for independent coffee shops.
 
 ---
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المرحلة 1 — الاستكشاف (PHASE 1 — DISCOVER)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Workspace & Product Configuration
 
-### [1A] الفرضية والتحقق (Hypothesis & Validation)
-
-#### 1. الفرضية القابلة للاختبار (Falsifiable Hypothesis)
-> "نحن نعتقد أن **أصحاب المقاهي المستقلة** لديهم مشكلة في **انخفاض معدل عودة العملاء (Retention) وصعوبة منافسة سلاسل المقاهي الكبرى (مثل ستاربكس)** بسبب غياب أدوات تسويق وولاء مخصصة وسهلة الاستخدام. سنعرف أن هذا صحيح عندما نرى **أن 30% من المقاهي التي تشترك في الفترة التجريبية تقوم بتفعيل برنامج الولاء الذكي وترسل أول حملة عروض ديناميكية خلال أول 7 أيام من الربط بنقاط البيع**."
-
-#### 2. الافتراضات الأكثر خطورة (Riskiest Assumptions)
-1.  **افتراض الرغبة (Desirability)**: هل أصحاب المقاهي لديهم الوقت والرغبة في إدارة نظام CRM تسويقي إضافي بجانب تشغيل المقهى اليومي؟
-2.  **افتراض الجدوى التقنية (Feasibility)**: هل يمكننا التكامل بسهولة وسرعة مع أنظمة نقاط البيع الحالية والمغلقة التي تستخدمها المقاهي (مثل Square, Clover, Foodics)؟
-3.  **افتراض القيمة للعميل النهائي (B2C Adoption)**: هل سيقوم العميل النهائي فعلياً بالتسجيل في برنامج الولاء للمقهى المستقل بدون تكاسل أو شعور بعبء تحميل تطبيق جديد؟
-
-#### 3. اختبارات التحقق السريعة والمنخفضة التكلفة (Low-Cost Validation Tests)
-*   **لافتراض الرغبة (Desirability)**: إنشاء صفحة هبوط (Landing Page) تشرح المنتج مع زر "اشترك في النسخة التجريبية المغلقة". سنقوم بتشغيل إعلانات مستهدفة بقيمة 50 دولاراً لأصحاب المقاهي على لينكد إن وإنستغرام لقياس معدل التحويل (Target CTR > 3%).
-*   **لافتراض الجدوى (Feasibility)**: إجراء مقابلة تقنية (Technical Spike) مع 3 مطورين خبراء في تكاملات POS ودراسة الوثائق البرمجية المفتوحة لـ Square و Foodics للتأكد من إمكانية سحب بيانات المعاملات لحظياً.
-*   **لافتراض العميل النهائي (B2C Adoption)**: تجربة "Concierge MVP" في مقهى محلي صديق: نضع لوحة عند الكاشير تحتوي على رمز QR يقود إلى نموذج بسيط (Google Form) يعطي خصم 20% على الطلب القادم مقابل ترك البريد الإلكتروني. سنقيس نسبة العملاء الذين يمسحون الرمز ويستخدمون الخصم فعلياً (Target Conversion > 15%).
-
-#### 4. معايير الإيقاف والبدء (Go/No-Go Decision Metrics)
-*   **معايير إيقاف الفكرة (Kill Criteria)**:
-    *   معدل النقر والتسجيل في صفحة الهبوط أقل من 1.5%.
-    *   رفض أصحاب المقاهي في المقابلات الشخصية دفع أكثر من 30 دولاراً شهرياً للنظام.
-    *   صعوبة التكامل مع نقاط البيع بدون دفع رسوم ترخيص باهظة للشركات الأم.
-*   **معايير البدء في البناء (Green Light Criteria)**:
-    *   تحقيق معدل تسجيل > 5% على صفحة الهبوط.
-    *   موافقة 5 أصحاب مقاهي على توقيع رسالة نية (Letter of Intent) للاشتراك في النسخة التجريبية بمجرد جاهزيتها.
-    *   إتمام تجربة QR Code في المقهى التجريبي بنسبة استرداد للخصومات تتجاوز 20%.
+* **MY PRODUCT / IDEA**: **BeanFlow CRM** — A mobile-first CRM and smart loyalty system that helps independent coffee shops automate personalized promotions, track customer visit patterns, and run digital stamp cards without requiring expensive POS integrations.
+* **MY TARGET USER**: Independent coffee shop owners and store managers who want to increase repeat visits but find enterprise POS systems (like Toast or Lightspeed) too expensive or complex.
+* **MY MARKET**: Food & Beverage (F&B) Retail SaaS / SMB CRM & Loyalty.
+* **MY STAGE**: Idea / Pre-launch.
 
 ---
 
-### [1B] المشهد التنافسي (Market Landscape)
+# PHASE 1 — DISCOVER
 
-#### 1. تحليل المنافسين الخمسة الأوائل (Competitor Matrix)
+### [1A] HYPOTHESIS
+**Falsifiable Product Hypothesis:**
+> "We believe **independent coffee shop owners** have a problem with **low customer retention rates and a lack of direct marketing channels** when relying on paper punch cards. We will know this is true when **at least 15% of active coffee shop customers download the BeanFlow loyalty app and redeem their first digital reward within 30 days of shop onboarding**."
 
-| المنافس | نموذج التسعير | نقاط القوة | نقاط الضعف | عوائق نموذج العمل لديهم |
-| :--- | :--- | :--- | :--- | :--- |
-| **Square Loyalty** | إضافي (تبدأ من $45/شهر) | متكامل تماماً مع نظام الدفع الخاص بهم، قاعدة مستخدمين ضخمة. | مغلق على نظام Square فقط، خيارات تخصيص محدودة جداً للعروض. | لا يمكنهم التوسع للمقاهي التي تستخدم POS آخر دون التضحية بنموذج عمولات الدفع الخاص بهم. |
-| **Toast Loyalty** | إضافي ($50/شهر) | قوي جداً في قطاع المطاعم والمقاهي، نظام طلبات مدمج. | مكلف جداً، معقد الإعداد للمقاهي الصغيرة، لا يدعم المقاهي خارج نظام Toast. | محبوسون في نظام الأجهزة (Hardware) المغلق الخاص بهم. |
-| **Loyera** | اشتراك شهري ($29/شهر) | يدعم نقاط بيع متعددة، واجهة بسيطة. | التصاميم قديمة، غياب الأتمتة الذكية (العروض ترسل يدوياً فقط). | يعتمدون على الدعم الفني المكلف لعمل تكاملات مخصصة. |
-| **Candybar** | اشتراك شهري ($49/شهر) | رقمي بالكامل (يدعم بطاقات الختم الرقمية)، سهل الإعداد للعميل. | لا يتكامل بعمق مع المخزون أو سلة المبيعات، غياب التحليلات المتقدمة. | يركزون على البساطة لدرجة تمنعهم من بناء أدوات تحليل متقدمة للشركات المتوسطة. |
-| **Yollty** | اشتراك شهري ($39/شهر) | تركيز قوي على تقييمات العملاء وجلب عملاء جدد عبر الإحالة. | التكاملات مع نقاط البيع ضعيفة، يعتمد على إدخال يدوي من الباريستا. | صعوبة التوسع للشركات الكبرى بسبب غياب الربط التلقائي بالمعاملات المالية. |
+**The 3 Riskiest Assumptions:**
+1. **Desirability (Owners)**: Shop owners are willing to display QR codes and train baristas to promote a digital loyalty system instead of using traditional paper punch cards.
+2. **Friction (Customers)**: Customers will take the 10 seconds to scan a QR code at the register rather than just paying and walking away.
+3. **Integration (POS)**: Independent shops can run this standalone on a tablet next to their existing register without needing deep integration into their legacy POS (Clover, Square, etc.).
 
-#### 2. الفجوة الكبرى في السوق (The Biggest Gap)
-الفجوة تكمن في **"الأتمتة التسويقية الذكية للمقاهي المستقلة بتكامل مرن"**. الحلول الحالية إما مغلقة ومحتكرة (Square/Toast) أو مفتوحة ولكنها غبية يدوية (Candybar). لا يوجد نظام يراقب نقاط البيع ليعرف أن "العميل أحمد لم يزر المقهى منذ 10 أيام بعد أن كان يزوره يومياً"، فيرسل له تلقائياً عرضاً مخصصاً (مثال: قهوتك المفضلة كورتادو بخصم 30% اليوم بين الساعة 4 و 6 مساءً لإعادة تنشيطه).
+**Fastest, Cheapest Validation Tests:**
+* *For Assumption 1 (Owners)*: **5 User Interviews** with local coffee shop owners. Show them a paper wireframe of the merchant dashboard and ask: "If we gave you this dashboard for free for 3 months, would you print this QR code stand and put it next to your credit card reader?"
+* *For Assumption 2 (Customers)*: **Fake Door Test**. Put a printed acrylic stand at a friendly local shop saying: "Scan to get your 10th coffee free (Digital Loyalty Beta)." Track how many scans the QR code gets relative to daily customer volume.
+* *For Assumption 3 (Integration)*: **Concierge MVP**. Run a 1-week test where we manually send SMS reward coupons to 20 customers of a single shop using a Google Sheet to track punches, proving the system works without POS software.
 
-#### 3. اتجاهات الـ 18 شهراً القادمة (Emerging Trends)
-*   **التسويق الفوري المعتمد على الموقع (Geofenced Real-time Marketing)**: إرسال تنبيهات للعملاء بمجرد اقترابهم من المقهى.
-*   **تحليل المبيعات بالذكاء الاصطناعي التوليدي**: تمكين صاحب المقهى من كتابة سؤال باللغة الطبيعية (مثال: "ما هي أكثر فترات اليوم ركوداً هذا الأسبوع وكيف أنشطها؟") ليقوم النظام باقتراح وتصميم حملة ولاء فوراً.
-
-#### 4. زاوية الدخول الموصى بها (Recommended Entry Angle)
-التركيز على **التكامل الفوري بنقرة واحدة (One-Click Integration) مع نظام POS الرائد محلياً (مثل Foodics في الشرق الأوسط أو Square عالمياً)** وتفعيل حملة "إعادة تنشيط العملاء الغائبين تلقائياً (Automated Win-Back Loops)" كأول ميزة أساسية. نبيع قيمة "استعادة العملاء المفقودين بدون تدخل منك"، وليس فقط "نظام بطاقات ولاء".
-
----
-
-### [1C] شخصيات المستخدمين (User Personas)
-
-#### الشخصية 1: سارة (صاحبة مقهى مستقل)
-*   **الخلفية**: سارة، 34 عاماً، تمتلك مقهيين مختصين في وسط المدينة. دخلها السنوي من المقاهي 80,000 دولار.
-*   **الهدف الأساسي**: زيادة وتيرة زيارة العملاء الحاليين (Visit Frequency) لتغطية تكاليف الإيجار المتزايدة، دون قضاء ساعات طويلة أمام شاشات الكمبيوتر لإعداد حملات تسويقية.
-*   **الإحباطات**:
-    1. تشتت البيانات بين نظام المبيعات (POS) ونظام رسائل الواتساب وقائمة الإيميلات اليدوية.
-    2. عدم معرفة من هم أفضل 20% من عملائها الذين يمثلون أغلب دخلها.
-    3. صعوبة إعداد حملات تسويقية معقدة؛ تشعر بالخوف من الهدر المالي في تقديم خصومات عشوائية.
-*   **اقتباس**: *"أنا باريستا وصاحبة عمل، لست خبيرة تسويق رقمي. أريد نظاماً يعمل لوحده ويجلب لي الناس في أوقات الركود."*
-*   **الميزة الأهم لها**: لوحة تحكم الأتمتة الذكية لزيارات العملاء (Set-and-Forget Automation Loops).
-
-#### الشخصية 2: خالد (العميل اليومي المشغول)
-*   **الخلفية**: خالد، 24 عاماً، طالب هندسة ومبرمج مستقل. يزور المقاهي للدراسة والعمل 4-5 مرات أسبوعياً.
-*   **الهدف الأساسي**: الحصول على تقدير وسرعة في الطلب، وتجميع نقاط ولاء واستردادها بدون تجميع بطاقات ورقية في محفظته.
-*   **الإحباطات**:
-    1. كراهية تحميل تطبيق منفصل لكل مقهى يزوره (مساحة الهاتف ممتلئة).
-    2. نسيان بطاقات الختم الورقية في المنزل.
-    3. العروض غير المخصصة (مثال: إرسال خصم على حليب الشوفان وهو يشرب القهوة السوداء فقط).
-*   **اقتباس**: *"إذا طلب مني الكاشير تحميل تطبيق جديد للحصول على نقطة، سأقول لا شكراً. اجعل الأمر سهلاً عبر رقم جوالي أو محفظة آبل."*
-*   **الميزة الأهم له**: تجميع النقاط عبر محفظة الجوال (Apple Wallet / Google Pay pass) أو رقم الجوال فقط عند الكاشير.
-
-#### الشخصية 3: مايكل (الباريستا الرئيسي)
-*   **الخلفية**: مايكل، 28 عاماً، باريستا يعمل بنظام الورديات. يواجه ضغط طوابير الصباح.
-*   **الهدف الأساسي**: خدمة العملاء بأسرع شكل ممكن وتفادي أي خطوة تزيد من وقت المعاملة (Transaction Time).
-*   **الإحباطات**:
-    1. الأنظمة التي تتطلب منه مسح الرموز يدوياً ببطء أو إدخال بيانات معقدة أثناء وقوف 10 أشخاص في الطابور.
-    2. تعطل النظام أو بطء استجابته مما يسبب إحراجاً مع العملاء.
-*   **اقتباس**: *"في الساعة 8 صباحاً، كل ثانية تهم. إذا كان نظام الولاء يأخذ أكثر من ثانيتين لتسجيل النقاط، فلن أستخدمه."*
-*   **الميزة الأهم له**: التعرف التلقائي على العميل بمجرد كتابة اسمه أو مسح سريع جداً متكامل مع شاشة المبيعات الحالية.
+**Go/No-Go Criteria:**
+* **Kill Criteria**:
+  - Less than 5% scan rate during the Fake Door Test.
+  - Owners state they will only use a loyalty tool if it is deeply integrated directly into their existing POS interface.
+* **Green Light Criteria**:
+  - >12% scan rate in the Fake Door Test.
+  - At least 3 out of 5 interviewed owners agree to run a 30-day live pilot in their shops.
 
 ---
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المرحلة 2 — التعريف (PHASE 2 — DEFINE)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### [1B] MARKET LANDSCAPE
 
-### [2A] إطار العمل والمؤشرات (Metrics Framework)
+#### Top 5 Competitors
+1. **Square Loyalty**: 
+   - *Pricing*: Add-on starting at $45/month per location.
+   - *Strengths*: Seamlessly built into the widely-used Square POS; zero friction for existing Square merchants.
+   - *Weaknesses*: Expensive for small shops; only works if the shop uses Square POS.
+2. **Candybar.co**:
+   - *Pricing*: $45/month flat rate.
+   - *Strengths*: Simple web-based loyalty tracker; does not require POS integration.
+   - *Weaknesses*: Lacks automated marketing tools (like SMS or automated email campaigns).
+3. **Loyera**:
+   - *Pricing*: Freemium up to 50 customers, then $19/month.
+   - *Strengths*: Low cost; simple merchant app.
+   - *Weaknesses*: Outdated UI/UX; poor customer-facing experience.
+4. **Toast Loyalty**:
+   - *Pricing*: Add-on starting at $50/month per location.
+   - *Strengths*: Powerful, deeply integrated restaurant CRM; supports online ordering.
+   - *Weaknesses*: Restricted only to restaurants using Toast hardware; completely unavailable to independent shops using other registers.
+5. **Traditional Paper Punch Cards**:
+   - *Pricing*: ~$0.05 per card (printing costs).
+   - *Strengths*: Zero technology friction; universally understood.
+   - *Weaknesses*: No data collection, zero customer insights, high fraud rate, frequently lost by customers.
 
-#### 1. مؤشر النجم القطبي (North Star Metric - NSM)
-> **"عدد زيارات العملاء المتكررة التي تم تحفيزها تلقائياً شهرياً (Monthly Automated-Driven Repeat Visits)"**
-*   **السبب**: هذا المؤشر يثبت القيمة الحقيقية التي يقدمها المنتج للمقهى (زيادة دخل حقيقي عبر إعادة العملاء) والقيمة للعميل النهائي (الحصول على عروض يحبها). إذا زاد هذا الرقم، فهذا يعني أن نظام الأتمتة لدينا يعمل بنجاح والعملاء يستجيبون له.
+#### Strategic Gaps & Entry Angle
+* **The Single Biggest Gap**: A loyalty system that provides **automated SMS re-engagement campaigns** (e.g., "We haven't seen you in 4 days, here is 20% off your next Latte") *without* requiring the merchant to swap out their cash register or POS system.
+* **18-Month Trends**: High adoption of mobile wallets (Apple Wallet/Google Pay loyalty passes) and the rise of localism post-inflation, where consumers want to support independent shops but expect Starbucks-level digital experiences.
+* **Entry Angle (How We Win)**: We launch **"Scan-to-Wallet" passes**. Customers scan a QR code at the register, and a loyalty card instantly goes into their Apple or Google Wallet. No app download is required for the customer. Merchants manage everything from a simple Android/iOS tablet app sitting next to their register.
 
-#### 2. المؤشرات المدخلة (Input Metrics Tree)
-*   **مؤشر النجم القطبي**: زيارات العملاء المتكررة المدفوعة بالنظام.
-    *   **معدل الربط والنشاط (Activation & Integration)**:
-        *   عدد المقاهي النشطة التي ربطت الـ POS بنجاح.
-        *   نسبة العملاء الذين تم تسجيلهم في النظام من إجمالي المعاملات اليومية للمقهى (Registration Rate).
-    *   **معدل الأتمتة (Automation Delivery)**:
-        *   عدد حملات إعادة التنشيط التلقائية المرسلة شهرياً.
-        *   معدل تسليم التنبيهات/الرسائل وفتحها (Open Rate).
-    *   **معدل الاستجابة والتحويل (Conversion / Redemption Rate)**:
-        *   نسبة استرداد العروض الديناميكية المرسلة (العروض المستردة / العروض المرسلة).
-        *   متوسط قيمة السلة (AOV) أثناء استرداد العروض مقارنة بالطلبات العادية.
+---
 
-#### 3. مؤشرات الصحة والحماية (Health & Guardrail Metrics)
-*   **وقت المعاملة الإضافي عند الكاشير (Barista Friction Latency)**: يجب ألا يضيف التسجيل/التحقق من العميل أكثر من **3 ثوانٍ** على عملية الدفع.
-*   **معدل إلغاء الاشتراك (Opt-out Rate)**: نسبة العملاء الذين يلغون اشتراكهم من التنبيهات/الرسائل التسويقية (يجب أن يبقى أقل من 2% لتفادي حظر قنوات الإرسال).
-*   **استقرار تكامل POS (POS API Latency)**: متوسط وقت استجابة الـ API بين نظامنا ونقاط البيع (يجب أن يكون أقل من 200ms).
+### [1C] USER PERSONAS
 
-#### 4. مؤشرات الوهم التي يجب تجنبها (Vanity Metrics to Avoid)
-*   **إجمالي عدد المقاهي المسجلة (Registered Accounts)**: لا يهم إذا كان المقهى لا يربط نقطة البيع الخاصة به أو لا يرسل عروضاً. الأهم هو "المقاهي النشطة تكاملياً".
-*   **إجمالي عدد بطاقات الولاء المصدرة (Total Cards Issued)**: قد يمتلك العميل بطاقة رقمية ولكنه لا يستخدمها أبداً. المؤشر الحقيقي هو "معدل الاستخدام النشط شهرياً (MAU)".
+#### Persona 1: Sarah, 38 — The Independent Owner
+* **Demographics**: Owner of "The Daily Grind" (2 locations), Income: $72,000/year.
+* **Primary Goal**: Increase the frequency of casual customers from 1.2 visits/week to 2.5 visits/week.
+* **Top 3 Frustrations**:
+  - Customers lose paper cards and complain.
+  - Square POS charges too much for loyalty add-ons.
+  - Has no way to contact customers once they walk out the door.
+* **Behaviors**: Busy, works the register during rush hours, relies heavily on Instagram for marketing.
+* **Direct Quote**: *"I know half my customers by face, but I have no idea how many of them actually come back every week, or how to get them back when business is slow."*
+* **Key Feature**: Automated SMS campaign builder for slow weekdays.
 
-#### 5. مخطط شجرة المؤشرات (Metrics Tree)
+#### Persona 2: Elena, 24 — The Head Barista
+* **Demographics**: Head Barista, Income: $32,000/year.
+* **Primary Goal**: Keep checkout transaction times under 30 seconds during the morning rush.
+* **Top 3 Frustrations**:
+  - Customers searching their bags for paper punch cards while the line backs up.
+  - Complex software that takes too many taps to add a point.
+  - Customers arguing about how many points they should have.
+* **Behaviors**: Tech-savvy, values fast workflows, gets stressed by long lines.
+* **Direct Quote**: *"If a loyalty app takes more than 5 seconds to scan at the counter, I'm not going to suggest it to customers when I have a line out the door."*
+* **Key Feature**: Ultra-fast QR scanning screen with sound/haptic validation.
+
+#### Persona 3: David, 29 — The Remote Worker (Customer)
+* **Demographics**: Software Engineer, Income: $105,000/year.
+* **Primary Goal**: Get rewarded for his daily coffee run without carrying physical cards.
+* **Top 3 Frustrations**:
+  - Forgotten punch cards sitting at home.
+  - Downloading a separate app for every coffee shop he visits.
+  - Spammy marketing notifications.
+* **Behaviors**: Pays exclusively with his phone, works from cafes, loyal to 2-3 local spots.
+* **Direct Quote**: *"I love supporting local cafes, but if I have to download a 50MB app just to track my coffee points, I'll pass."*
+* **Key Feature**: Apple Wallet & Google Pay pass integration.
+
+---
+
+# PHASE 2 — DEFINE
+
+### [2A] METRICS FRAMEWORK
+
+#### North Star Metric
+* **Weekly Active Loyals (WAL)**: The number of unique customers who scan their loyalty card at least **twice** in a 7-day period at a participating shop.
+* *Why?* Loyalty systems succeed only if they drive repeat habit-forming behaviors. Single scans don't prove retention. Two visits a week indicates the shop is becoming a routine.
+
+#### Input Metrics
+1. **Onboarding Rate (Customer)**: % of scans that result in a customer adding the pass to their Apple/Google Wallet.
+2. **Scan Velocity (Barista)**: Average time (in seconds) between customer presenting their pass and scanner confirmation.
+3. **Redemption Rate**: % of earned rewards that are actually claimed by customers.
+4. **Active Merchant Rate**: % of registered shops that record at least 50 loyalty scans per week.
+
+#### Health & Guardrail Metrics
+1. **Checkout Latency**: If the average transaction checkout time increases by >5 seconds due to scanning, checkout friction will kill merchant adoption.
+2. **Opt-Out Rate**: % of customers who block SMS alerts or delete their wallet passes.
+3. **Merchant Churn**: % of shops that uninstall the app or cancel subscriptions monthly.
+
+#### Vanity Metrics to AVOID
+1. **Total Registered Users**: Looks good on paper but ignores churned users who deleted the pass after one scan.
+2. **App Store Downloads (Merchant App)**: Merchants downloading the app does not translate to customers using the system.
+3. **Total Points Issued**: Points are a liability until redeemed; high points with low redemptions show a dead community.
+
+#### Metrics Tree
 ```
-[North Star Metric: Automated repeat visits per month]
-  ├── [Input 1: Active Connected Merchant Locations]
-  │     ├── Self-service POS integration completion rate (%)
-  │     └── Daily API webhook health rate (%)
-  ├── [Input 2: Customer Enrollment Rate]
-  │     ├── Barista UI identification latency (must be < 3s)
-  │     └── Mobile wallet pass downloads per location
-  └── [Input 3: Offer Conversion Rate]
-        ├── Campaign open rate (%)
-        └── Redemption conversion rate (%)
-```
-
-#### 6. الأحداث الخمسة الأولى للمراقبة (Day 1 Instrumentation Events)
-1.  `merchant_pos_connected`: يطلق عند إتمام ربط نقطة البيع بنجاح (الخصائص: `pos_provider`, `location_count`).
-2.  `customer_registered`: يطلق عند تسجيل عميل جديد في برنامج ولاء مقهى (الخصائص: `signup_channel` (SMS/QR/Wallet), `has_wallet_downloaded`).
-3.  `automation_trigger_fired`: يطلق عندما يقوم النظام بتفعيل وإرسال عرض تلقائي لعميل غائب (الخصائص: `trigger_type` (win-back/birthday/idle), `channel` (SMS/Email/Wallet notification)).
-4.  `loyalty_points_redeemed`: يطلق عند استرداد مكافأة أو عرض في المقهى (الخصائص: `reward_value`, `pos_transaction_id`, `discount_amount`).
-5.  `opt_out_received`: يطلق عند طلب العميل إلغاء الاشتراك من الرسائل (الخصائص: `reason`, `channel`).
-
----
-
-### [2B] وثيقة متطلبات المنتج (PRD)
-
-#### 1. بيان المشكلة (Problem Statement)
-المقاهي المستقلة تفقد ما يصل إلى 45% من عملائها الجدد بعد الزيارة الأولى لصالح سلاسل المقاهي الكبرى التي تمتلك تطبيقات ولاء ذكية بملايين الدولارات. أصحاب المقاهي لا يمتلكون الميزانية أو الخبرة الفنية لبناء وتشغيل هذه البرامج، ويحتاجون إلى حل متكامل مع نظام الكاشير الحالي يعمل بشكل مستقل لإعادة جذب العملاء وزيادة ولائهم.
-
-#### 2. الأهداف القريبة (Goals)
-*   **أهداف 30 يوماً**: إطلاق النسخة التجريبية (Beta) مع مقهيين محليين والربط الناجح بـ Square/Foodics بنسبة استقرار 99.9%.
-*   **أهداف 60 يوماً**: تسجيل 1,000 عميل نهائي في برامج الولاء وتفعيل أول حملة أوتوماتيكية لإعادة التنشيط (Win-Back Campaign).
-*   **أهداف 90 يوماً**: إثبات زيادة بنسبة 10% في معدل زيارات العملاء المتكررة للمقاهي المشاركة في النسخة التجريبية مقارنة بالشهر السابق.
-
-#### 3. ما هو خارج نطاق التركيز (Non-Goals)
-*   بناء نظام كاشير (POS) خاص بنا.
-*   توفير نظام طلب مسبق ودفع جوال (Mobile Ordering) في هذه المرحلة.
-*   التكامل مع تطبيقات التوصيل الخارجية (مثل هنقرستيشن / UberEats).
-
-#### 4. قصص المستخدمين ومعايير القبول (User Stories & Acceptance Criteria)
-
-##### قصة 1: ربط المقهى بنقطة البيع (P0)
-> **بصفتي** صاحب مقهى، **أريد** ربط حسابي في BeanLoyal بنظام المبيعات (POS) الخاص بي بضغطة زر، **حتى** يتم مزامنة المبيعات وبيانات العملاء تلقائياً بدون إدخال يدوي.
-*   **معايير القبول**:
-    *   يجب أن يرى صاحب المقهى خيار "ربط نظام المبيعات" في لوحة التحكم ويختار مزوده (مثل Square).
-    *   عند النقر، يتم تحويله لصفحة الـ OAuth الخاصة بالمزود للموافقة على الصلاحيات.
-    *   بعد إتمام العملية بنجاح، يظهر مؤشر أخضر "متصل بنجاح" وتظهر قائمة بالفروع الحالية لمزامنتها.
-    *   في حال فشل الربط، تظهر رسالة خطأ واضحة مع رابط مباشر لصفحة الدعم الفني.
-
-##### قصة 2: تجميع النقاط للعميل (P0)
-> **بصفتي** باريستا، **أريد** تسجيل زيارة العميل وتجميع نقاطه عبر الكاشير بكتابة رقم جواله فقط، **حتى** لا أعطل طابور الخدمة.
-*   **معايير القبول**:
-    *   بمجرد إدخال رقم جوال العميل في خانة المبيعات على POS، يجب أن يرسل النظام طلباً للخلفية للتحقق من وجوده.
-    *   إذا كان العميل مسجلاً، يتم إضافة نقاط الفاتورة الحالية فوراً وتحديث رصيده (مزامنة خلال أقل من ثانيتين).
-    *   إذا كان العميل جديداً، يتم تسجيله تلقائياً وإرسال رسالة ترحيبية تحتوي على رابط بطاقة الولاء الرقمية الخاصة به.
-
-##### قصة 3: حملة إعادة التنشيط التلقائية (P1)
-> **بصفتي** صاحب مقهى، **أريد** تفعيل حملة أوتوماتيكية ترسل رسالة خصم للعملاء الذين لم يزوروا المقهى منذ 14 يوماً، **حتى** أعيدهم لزيارتنا دون مجهود مني.
-*   **معايير القبول**:
-    *   يمكن لصاحب المقهى تفعيل حملة "إعادة النشاط" من لوحة التحكم وتعديل نص الرسالة وقيمة الخصم.
-    *   يقوم النظام بفحص قاعدة البيانات كل ليلة وتحديد العملاء الذين مرت 14 يوماً على آخر زيارة لهم ولم يتلقوا عروضاً مشابهة في آخر 30 يوماً.
-    *   يتم توليد رمز خصم فريد (Dynamic Promo Code) لكل عميل وإرساله له عبر SMS أو محفظة الجوال.
-    *   يتم إلغاء صلاحية الرمز تلقائياً بعد 7 أيام من إرساله لمنع إساءة الاستخدام.
-
-##### قصة 4: استخدام بطاقة المحفظة الرقمية (P1)
-> **بصفتي** عميلاً للمقهى، **أريد** إضافة بطاقة الولاء إلى محفظة آبل أو جوجل على هاتفي، **حتى** أتحقق من رصيد نقاطي وأبرزها للكاشير بدون فتح تطبيقات.
-*   **معايير القبول**:
-    *   الرابط الترحيبي المرسل للعميل يفتح صفحة جوال تحتوي على زر واضح "إضافة إلى Apple Wallet" و "إضافة إلى Google Wallet".
-    *   البطاقة المصدرة يجب أن تحتوي على شعار المقهى، اسم العميل، رصيد النقاط الحالي، ورمز باركود فريد.
-    *   يتحدث رصيد النقاط الظاهر على البطاقة تلقائياً في الخلفية (Push Update) في كل مرة يشتري فيها العميل أو يسترد جائزة.
-
-##### قصة 5: تقارير الأداء والأثر المالي (P2)
-> **بصفتي** صاحب مقهى، **أريد** رؤية تقرير أسبوعي يوضح كم زاد دخل المقهى بسبب عروض الولاء الذكية، **حتى** أتحقق من الجدوى المالية للاشتراك.
-*   **معايير القبول**:
-    *   توفير لوحة تقارير مبسطة تعرض: إجمالي الدخل الإضافي (Revenue Incremental)، عدد العملاء المعاد تنشيطهم، ونسبة العروض التي تم استردادها.
-    *   مقارنة واضحة بين متوسط سلة الشراء للعميل المشترك في الولاء والعميل العادي.
-
-#### 5. الحالات الاستثنائية والمخاطر (Edge Cases & Risks)
-
-| الحالة الاستثنائية | التأثير / الخطورة | طريقة التعامل البرمجية |
-| :--- | :--- | :--- |
-| **انقطاع الإنترنت في المقهى أثناء الدفع** | عالية (تعطل تجميع النقاط) | يتم حفظ المعاملات محلياً في نظام نقاط البيع (إذا كان يدعم الأوفلاين) ومزامنتها لاحقاً بمجرد عودة الاتصال. |
-| **إدخال رقم جوال خاطئ أو وهمي** | منخفضة (تسجيل بيانات تالفة) | تفعيل فحص التحقق من صيغة الرقم (Regex Validation) حسب الدولة قبل إرسال أي طلب للخلفية. |
-| **محاولة استرداد رمز الخصم مرتين** | عالية (خسائر مالية للمقهى) | كل رمز خصم يتم توليده يكون فريداً لمرة واحدة (Single-use UUID) ويتم وسمه كـ "مستهلك" في قاعدة البيانات لحظة تفعيله على POS لمنع استخدامه مرة أخرى. |
-| **تغيير العميل لرقم جواله** | متوسطة (تشتت الحسابات) | إتاحة إمكانية دمج الحسابات (Account Merger) من لوحة تحكم صاحب المقهى بعد التحقق من الهوية برمز OTP يرسل للرقمين. |
-| **فشل إرسال رسائل الـ SMS بسبب الرصيد** | عالية (فشل التواصل) | وجود نظام تنبيه مبكر لفريق الدعم الفني ونظام إشعار تلقائي لصاحب المقهى لشحن رصيد الحملات قبل نفاده بـ 48 ساعة. |
-
-#### 6. الأسئلة المفتوحة (Open Questions)
-*   هل تسمح سياسات آبل وجوجل بتحديث أرصدة بطاقات المحفظة الرقمية بشكل فوري ومستمر لجميع المستخدمين بدون تكاليف إضافية؟ (تحتاج لتأكيد تقني).
-*   هل نتحمل تكاليف رسائل الـ SMS ضمن الباقة الشهرية، أم نشحنها بنظام "الدفع حسب الاستهلاك (Pay-as-you-go)"؟
-
----
-
-### [2C] تحديد الأولويات (RICE Prioritization)
-
-قمنا بإدراج الميزات المشتقة من الـ PRD وتقييمها لترتيب جدول الأولويات:
-
-*   **معيار Reach**: عدد العملاء النهائيين أو المقاهي المتأثرة شهرياً.
-*   **معيار Impact**: التأثير على مؤشر النجم القطبي (3.0 للضخم، 1.0 للمتوسط، 0.25 للمحدود).
-*   **معيار Confidence**: نسبة الثقة في تقديراتنا (100% للبيانات المؤكدة، 50% للتوقعات).
-*   **معيار Effort**: الجهد الهندسي مقاساً بـ (أسابيع عمل لمطور واحد).
-
-#### جدول ترتيب الأولويات (RICE Sorting Table)
-
-| الميزة | Reach | Impact | Confidence | Effort | RICE Score | الترتيب |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1. تكامل POS بنقرة واحدة (Square)** | 1,000 (مقاهي) | 3.0 | 100% | 4 | **750.0** | **#1** |
-| **2. تسجيل العملاء برقم الجوال** | 10,000 (مستخدم) | 3.0 | 90% | 2 | **13,500** * | **#2** |
-| **3. أتمتة حملة إعادة التنشيط الذكية** | 5,000 (مستخدم) | 2.0 | 80% | 3 | **2,666** | **#3** |
-| **4. بطاقات Apple & Google Wallet** | 8,000 (مستخدم) | 1.0 | 80% | 4 | **1,600** | **#4** |
-| **5. لوحة تقارير الأثر المالي لصاحب المقهى** | 500 (مقاهي) | 1.0 | 70% | 3 | **116.6** | **#5** |
-
-*\* ملاحظة: ميزة "تسجيل العملاء برقم الجوال" سجلت أعلى نتيجة RICE نظراً للعدد الهائل من المستخدمين النهائيين الذين سيمرون عبر هذه الواجهة يومياً مع انخفاض جهد التطوير، تليها ميزة "تكامل نقاط البيع" التي تعد حجر الأساس للمشروع ككل.*
-
-**توصية Sprint 1**: إطلاق الميزات (1 و 2) لأن الربط بالـ POS وتسجيل العميل يمثلان العمود الفقري اللازم للبدء.
-
----
-
-### [2D] تشريح المنافس الأول (Competitor Teardown)
-
-#### المنافس المستهدف بالتفكيك: Square Loyalty
-
-#### 1. التدفق التجريبي لعملية التسجيل (Onboarding Flow)
-*   **الخطوات**: فتح حساب Square -> تفعيل خيار Loyalty من المتجر الداخلي -> اختيار طريقة كسب النقاط (نقود منفق عليها، زيارات، أو ميزات محددة) -> إطلاق.
-*   **الاحتكاك**: سهل جداً للتفعيل إذا كنت تستخدم أجهزة Square، ولكنه يتطلب منك إدخال معلومات بطاقتك الائتمانية مسبقاً وتعد خيارات التسعير غير مرنة للمقاهي الصغيرة.
-*   **لحظة الـ Aha!**: عندما يقوم أول عميل بإدخال رقم جواله على شاشة دفع Square ويصله إشعار فوري بحصوله على نقطة.
-
-#### 2. حلقات الولاء والاحتفاظ لديهم (Retention Loops)
-*   يعتمد بشكل شبه كامل على التنبيهات النصية القصيرة (SMS) التي تخبر العميل برصيده الجديد من النقاط، أو رسائل البريد الإلكتروني الأسبوعية التلقائية.
-*   *حلقة الاستثمار*: العميل يشعر أنه جمع 8 نقاط من أصل 10 للحصول على قهوة مجانية، مما يجعله يرفض تجربة مقهى منافس لا يمتلك فيه نقاطاً.
-
-#### 3. طريقة تحقيق الأرباح (Monetization)
-*   يفرض رسوماً شهرية تبدأ من 45 دولاراً وتزيد بناءً على عدد زيارات العملاء المسجلة في الشهر (تسعير تصاعدي يعاقب المقهى على نجاحه!).
-
-#### 4. نقاط الضعف التي يمكننا استغلالها
-*   **الاحتكار التكنولوجي**: إذا أراد صاحب المقهى الانتقال لنظام POS آخر أرخص أو أفضل محلياً (مثل Foodics)، فإنه يفقد برنامج الولاء بالكامل وبيانات عملائه التاريخية.
-*   **غياب الأتمتة الذكية المعقدة**: نظام العروض لديهم خطي بسيط (اجمع نقاط لتحصل على كذا) ولا يوجد أتمتة ديناميكية مبنية على فترات الركود اليومية للمقهى أو سياق الطقس أو غياب العميل الطويل.
-
-#### 5. الإستراتيجية (ما نسرقه وما نغيره)
-*   **ما نسرقه**: واجهة تسجيل العميل البسيطة جداً (رقم الجوال عند الكاشير) لتفادي أي احتكاك في الطابور.
-*   **ما نغيره**: نتيح الربط بنقاط بيع متعددة (Multi-POS Compatibility)، ونبني نظام أتمتة ذكي مبني على سلوك العميل (Behavior-driven campaigns) بدلاً من نظام النقاط الجامد فقط.
-
----
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المرحلة 3 — البناء (PHASE 3 — BUILD)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-### [3A] قصص المستخدمين ومعايير القبول التفصيلية
-
-#### قصص المستخدم المحددة للتطوير الفوري:
-
-##### 1. قصة تسجيل العميل برقم الجوال عند الكاشير
-*   **الصيغة**: "بصفتي باريستا، أريد تسجيل العميل برقم جواله عند الفاتورة، حتى يتم احتساب نقاطه تلقائياً."
-*   **سيناريوهات القبول (Gherkin Syntax)**:
-    *   *سيناريو 1: العميل مسجل مسبقاً*
-        *   **Given** أن الباريستا قام بفتح شاشة إدخال العميل على POS.
-        *   **When** يتم كتابة الرقم "0501234567" والضغط على إدخال.
-        *   **Then** يقوم النظام باسترجاع الحساب وعرض الاسم "أحمد" ورصيد نقاطه الحالي "120 نقطة" على الشاشة خلال أقل من ثانيتين.
-    *   *سيناريو 2: العميل جديد تماماً*
-        *   **Given** أن الباريستا كتب الرقم "0509999999" وهو رقم غير موجود بقاعدة بياناتنا.
-        *   **When** يضغط على إدخال.
-        *   **Then** يقوم النظام بإنشاء ملف تعريف جديد مؤقت، وتأكيد العملية بنجاح، وإرسال رسالة ترحيبية فورية بالـ SMS للعميل تحتوي على رابط إكمال الملف وتنزيل بطاقة المحفظة.
-
-##### 2. تعريف حالة الاكتمال (Definition of Done - DoD)
-*   تمرير جميع اختبارات الوحدة (Unit Tests) بنسبة تغطية لا تقل عن 85%.
-*   اجتياز مراجعة الأكواد (Code Review) من قبل مبرمجين اثنين.
-*   التحقق من عدم وجود أي تسريبات لبيانات العملاء (Security Audit).
-*   زمن استجابة الـ API لا يتجاوز 1.5 ثانية تحت ضغط محاكاة 500 معاملة في نفس الوقت.
-
----
-
-### [3B] مصفوفة حالات الاختبار (Unit Test Cases)
-
-تغطي هذه المصفوفة حالات اختبار ميزة "تسجيل العميل والتحقق من حسابه برقم الجوال":
-
-| معرف الاختبار | فئة الاختبار | اسم الاختبار | الشروط المسبقة | خطوات الاختبار | النتيجة المتوقعة | الأولوية |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC-001** | Happy Path | تسجيل عميل حالي بنجاح | وجود حساب مسجل بالرقم `0501234567` | 1. إدخال الرقم `0501234567` في شاشة البحث.<br>2. إرسال الطلب. | يعود النظام ببيانات العميل (الاسم والنقاط) مع رمز الحالة `200 OK`. | P1 |
-| **TC-002** | Happy Path | إنشاء عميل جديد تلقائياً | الرقم غير مسجل في النظام | 1. إدخال رقم جديد `0509999999`.<br>2. إرسال الطلب. | إنشاء الحساب بنجاح، إرسال رسالة ترحيبية، رمز الحالة `201 Created`. | P1 |
-| **TC-003** | Boundary | رقم بأطوال غير صحيحة | لا يوجد | 1. إدخال رقم جوال قصير جداً `050`.<br>2. إرسال الطلب. | يرفض النظام المدخل ويعيد خطأ `400 Bad Request` يوضح الخلل. | P2 |
-| **TC-004** | Boundary | رقم يحتوي على رموز أو أحرف | لا يوجد | 1. إدخال القيمة `050123abc#`.<br>2. إرسال الطلب. | يرفض النظام المدخل ويمنع إرساله للخادم. | P2 |
-| **TC-005** | Negative | رقم فارغ أو فراغات | لا يوجد | 1. ترك الحقل فارغاً وإرسال. | يظهر خطأ للمستخدم "يرجى إدخال رقم الجوال". | P1 |
-| **TC-006** | Edge Case | محاولة تسجيل متزامنة بنفس الرقم | لا يوجد | 1. إرسال طلبين لتسجيل العميل بالرقم `0507777777` في نفس الميكروثانية. | يقبل النظام الطلب الأول وينشئ الحساب، والطلب الثاني يعيد بيانات الحساب المنشأ دون تكرار الحساب في قاعدة البيانات. | P2 |
-| **TC-007** | Edge Case | انقطاع الاتصال بقاعدة البيانات | تعطل سيرفر الـ DB مؤقتاً | 1. إدخال رقم صحيح وإرسال الطلب في وضع عدم الاتصال. | يفشل الطلب بشكل آمن ويعيد رسالة خطأ صديقة للمستخدم مع تخزين العملية في ذاكرة التخزين المؤقت للـ POS للمزامنة اللاحقة. | P1 |
-| **TC-008** | Security | محاولة حقن SQL (SQL Injection) | لا يوجد | 1. إدخال النص: `0501234567 OR 1=1;--` في الحقل. | يقوم النظام بتطهير المدخلات وفحصها، ويرفض المعاملة كطلب غير صالح مع تسجيل محاولة الاختراق في السجلات الأمنية. | P1 |
-| **TC-009** | Security | فحص الصلاحيات للطلب (Unauthorized) | استخدام توكن ربط منتهي الصلاحية | 1. إرسال طلب فحص الرقم من نظام POS بتوكن غير صالح. | يعيد النظام خطأ `401 Unauthorized` ويمنع تسريب بيانات العميل. | P1 |
-| **TC-010** | Performance | سرعة الاستجابة تحت الضغط | تشغيل محاكاة لـ 200 طلب متزامن | 1. إرسال 200 طلب فحص رقم هاتف متزامن. | متوسط استجابة السيرفر لكل طلب أقل من 200ms بدون أي انهيار للنظام. | P2 |
-
----
-
-### [3C] خطة الـ Sprint الأول (Sprint 1 Plan)
-
-*   **هدف السبرينت الأول**: "تأمين تدفق المبيعات الأساسي من خلال إتمام التكامل التقني مع نظام Square وتسهيل تسجيل العملاء برقم الجوال عند الكاشير."
-*   **توزيع المهام والتقدير النقاطي (Velocity: 20 SP)**:
-    *   *المطور 1 (Backend)*: بناء الـ APIs الخاصة بالتحقق وإنشاء حسابات العملاء ومزامنة النقاط تلقائياً (5 نقاط - SP).
-    *   *المطور 2 (POS Integrator)*: بناء وتوثيق التكامل مع Square Webhooks لاستقبال أحداث المعاملات وتحديث النقاط (8 نقاط - SP).
-    *   *المطور 3 (Frontend/UX)*: بناء لوحة الإعدادات البسيطة لصاحب المقهى لربط حسابه ومراقبة العمليات التجريبية (5 نقاط - SP).
-*   **البند الأكثر خطورة وكيفية حله**:
-    *   *الخطر*: تأخر موافقة متجر Square على تفعيل تطبيقنا التجريبي أو مواجهة مشاكل في صلاحيات الـ API.
-    *   *الحل*: في الأيام الثلاثة الأولى، سنقوم بإنشاء "محاكي لنقاط البيع (Mock POS Server)" يحاكي إرسال وتلقي الـ Webhooks الخاصة بـ Square تماماً لتطوير واختبار النظام محلياً دون انتظار بيئة المطورين لـ Square.
-*   **معيار نجاح السبرينت**: تسجيل أول معاملة مبيعات وهمية على نظام كاشير محاكي وتحديث رصيد العميل في قاعدة بياناتنا بشكل فوري وصحيح بنسبة 100%.
-
----
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المرحلة 4 — الإطلاق والشحن (PHASE 4 — SHIP)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-### [4A] خطة الدخول إلى السوق (Go-To-Market Plan)
-
-#### 1. أهداف الإطلاق الرقمية (30/60/90 Days Targets)
-*   **اليوم 30**: إتمام عملية الإطلاق التجريبي مع 5 مقاهي مختارة محلياً ومزامنة بيانات 500 عميل نشط.
-*   **اليوم 60**: زيادة عدد المقاهي النشطة إلى 20 مقهى، وبدء تحفيز زيارات متكررة تلقائياً بمعدل لا يقل عن 200 زيارة إضافية شهرياً.
-*   **اليوم 90**: التوسع لـ 50 مقهى، وتحقيق دخل متكرر شهري (MRR) بقيمة 1,500 دولار مع نسبة احتفاظ بالمقاهي المشتركة (Merchant Retention) تبلغ 95%.
-
-#### 2. الشريحة المستهدفة الأولى (The Wedge Segment)
-المقاهي المختصة المستقلة (Specialty Coffee Shops) التي تمتلك من فرع إلى 3 فروع في المناطق الحضرية المزدحمة وتستخدم نظام Foodics أو Square. هذه الشريحة تتميز بعلاقة وطيدة مع عملائها ولديهم وعي كبير بقيمة الحفاظ على العميل ولكنهم لا يملكون تكنولوجيا متطورة.
-
-#### 3. إطار الرسائل التسويقية (Positioning & Messaging)
-*   **العنوان الرئيسي**: "أعد عملائك لطاولات مقهاك... تلقائياً."
-*   **العنوان الفرعي**: "نظام CRM الذكي المدمج مع كاشير مقهاك. يحلل عادات الشراء ويرسل عروضاً مخصصة لعملائك الغائبين لإعادتهم من جديد دون أن تحرك إصبعاً."
-*   **الركائز الثلاث للقيمة**:
-    1.  **ربط فوري بلا احتكاك**: ابدأ خلال 5 دقائق بربط نظام الكاشير الحالي دون الحاجة لشراء أجهزة جديدة.
-    2.  **أتمتة ذكية وليست عروض عشوائية**: توجيه العرض المناسب للعميل المناسب في وقت الركود لضمان الربحية.
-    3.  **علاقة مباشرة**: تواصل مع عملائك عبر قنواتهم المفضلة (رسائل SMS وبطاقات محفظة الجوال) دون إزعاجهم بتطبيقات إضافية.
-
-#### 4. استراتيجية القنوات التسويقية (Channel Strategy)
-1.  **القناة 1 (الشراكات مع شركات الـ POS)**: التواجد في متجر تطبيقات Foodics و Square للوصول المباشر للمقاهي التي تبحث عن ميزات ولاء.
-2.  **القناة 2 (المبيعات المباشرة Scrappy Sales)**: النزول الميداني لأصحاب المقاهي المستهدفة في فترات بعد الظهر (فترات الركود) وإعطائهم تحليلاً مجانياً مقترحاً لمبيعاتهم المفقودة.
-3.  **القناة 3 (التسويق الفيروسي للمستهلك النهائي)**: وضع رمز QR ذو تصميم جذاب ومميز على أكواب المقهى أو الفواتير يحفز الزبون على كسب نقاط سريعة بنقرة واحدة.
-
-#### 5. قائمة فحص الجاهزية للإطلاق (Pre-Launch Checklist)
-*   [x] اختبار أداء التكامل التقني والتأكد من استقرار الـ Webhooks.
-*   [x] صياغة بنود سياسة الخصوصية وشروط الاستخدام وتأكيد توافقها مع قوانين حماية البيانات المحلية.
-*   [x] اختبار توافق واجهة مستخدم الكاشير للباريستا لضمان سرعتها.
-*   [x] شحن رصيد مزود الرسائل النصية القصير (SMS Gateway) وإعداد خطة احتياطية للرسائل.
-*   [x] إعداد فيديو تدريبي مدته 90 ثانية لتعليم الباريستا كيفية التعامل مع النظام.
-*   [x] توفير لوحة تتبع المؤشرات الفنية (Grafana/Datadog) لمراقبة الأخطاء لحظياً.
-*   [x] تجهيز مواد الدعم الفني ومركز المساعدة الرقمي.
-*   [x] تحديد خطة أسعار واضحة وإعداد بوابة الدفع للاشتراكات (Stripe).
-
-#### 6. خطة يوم الإطلاق ساعة بساعة (Launch Day Playbook)
-*   **08:00 AM**: تشغيل ومراقبة خوادم الإنتاج والتحقق من اتصال المقاهي الخمسة التجريبية.
-*   **09:00 AM**: إرسال الباريستا في المقاهي التجريبية لأول معاملة حقيقية للتأكد من المزامنة الصباحية.
-*   **10:00 AM**: نشر تطبيقنا رسمياً على متجر تطبيقات نظام الـ POS (Square App Marketplace).
-*   **12:00 PM**: نشر منشور الإطلاق ومشاركة الفيديو الترويجي على قنوات التواصل الاجتماعي واستهداف مجتمعات ملاك المقاهي.
-*   **03:00 PM**: مراجعة لوحة البيانات الفنية للتأكد من عدم وجود أي تأخر في تسليم نقاط العملاء الجدد.
-*   **08:00 PM**: مكالمة سريعة مع أصحاب المقاهي الخمسة التجريبية لجمع ملاحظات اليوم الأول للباريستا والعملاء.
-
-#### 7. معايير الإيقاف الطارئ للإطلاق (Kill Criteria)
-*   تسبب نظامنا في إيقاف أو تعليق عمل كاشيرات المقاهي الشريكة (حالة طارئة فورا يتم فصل الاتصال).
-*   نسبة فشل في معالجة المعاملات تتجاوز 3% في أول 4 ساعات.
-
----
-
-### [4B] خطة تجارب الإطلاق (A/B Test Design)
-
-نقوم بتصميم 3 تجارب بهدف زيادة معدل إتمام العملاء للتسجيل بعد أول عملية شراء:
-
-#### التجربة 1: تجربة قناة التسجيل الترحيبية (SMS Link vs. Wallet Pass)
-*   **الفرضية**: "نعتقد أن توجيه العميل مباشرة لتنزيل بطاقة محفظة الجوال (Wallet Pass) بدلاً من توجيهه لصفحة تعبئة بيانات عبر الويب سيزيد من معدل إتمام التسجيل والاحتفاظ بالبطاقة لأنها تتطلب نقرة واحدة وتلغي الحاجة لكتابة بيانات."
-*   **العينة أ (Control)**: يتلقى العميل رسالة نصية ترحيبية تحتوي على رابط لصفحة ويب لكتابة اسمه وبريده الإلكتروني.
-*   **العينة ب (Variant)**: يتلقى العميل رسالة نصية تحتوي على زر مباشر لتثبيت بطاقة الولاء في المحفظة (Apple/Google Wallet Pass) فوراً، ويتم جمع بياناته لاحقاً.
-*   **المؤشرات**:
-    *   *المؤشر الأساسي*: نسبة إتمام التسجيل وحفظ البطاقة في الهاتف (Sign-up Completion Rate).
-    *   *المؤشر الحامي*: وقت وصول أول معاملة بالنقاط بعد التسجيل للتأكد من نجاح عمل المحفظة الرقمية.
-*   **حجم العينة المطلوب**: 800 عميل جديد (400 لكل عينة) لتحقيق قوة إحصائية 80% ومعدل ثقة 95% للكشف عن تحسن متوقع بنسبة 5%.
-
-#### التجربة 2: توقيت إرسال عرض إعادة التنشيط الأول (7 أيام vs. 14 يوماً)
-*   **الفرضية**: "نعتقد أن إرسال عرض إعادة التنشيط للعميل بعد 7 أيام من عدم زيارته بدلاً من الانتظار لـ 14 يوماً سيحقق نسبة عودة أعلى لأن مقياس رغبته في استهلاك الكافيين واعتياده على المكان لا يزال نشطاً في ذاكرته القريبة."
-*   **العينة أ (Control)**: إرسال الخصم بعد 14 يوماً من الانقطاع.
-*   **العينة ب (Variant)**: إرسال الخصم بعد 7 أيام من الانقطاع.
-*   **المؤشرات**:
-    *   *المؤشر الأساسي*: نسبة استرداد الخصم والعودة للشراء (Redemption & Visit Rate).
-    *   *المؤشر الحامي*: هامش الربح الإجمالي للمقهى (للتأكد من أننا لا نوزع خصومات دون جدوى مالية حقيقية).
-
----
-
-### [4C] تحديث أصحاب المصلحة (Stakeholder Update)
-
-*   **الموضوع**: تحديث أسبوع الإطلاق لـ BeanLoyal CRM
-*   **الملخص التنفيذي**: تم إطلاق المنتج بنجاح والربط مع 5 مقاهي تجريبية، والنظام مستقر تقنياً بنسبة 100% مع معالجة أكثر من 1200 نقطة ولاء للعملاء في الأسبوع الأول.
-*   **الحالة العامة**: **أخضر (GREEN)**
-    *   *السبب*: إطلاق مستقر، صفر حالات تعطل للكاشيرات، سرعة استجابة الـ API بلغت متوسط 140ms (أقل من الحد الأقصى المستهدف 200ms).
-*   **النجاحات الأساسية هذا الأسبوع**:
-    *   تفعيل التكامل بنجاح مع نظام الكاشير المعتمد في المقاهي المستهدفة.
-    *   تسجيل 340 عميلاً جديداً في برنامج الولاء خلال أول 5 أيام من تفعيل الباركود.
-    *   معدل تنزيل بطاقات المحفظة الرقمية (Wallet Passes) تجاوز 70% من إجمالي المسجلين الجدد.
-*   **المخاطر والحلول المجدولة**:
-    *   *المخاطر*: تأخر بعض المقاهي في وضع الملصقات الإعلانية لرموز QR للعملاء عند الكاشير.
-    *   *الحل*: يقوم مسؤول نجاح العملاء في فريقنا بالزيارة الميدانية وتثبيت الملصقات وتدريب الموظفين يدوياً قبل نهاية الأسبوع. (المالك: خالد - تاريخ الحل: 16 يونيو).
-*   **المطلوب من القيادة**:
-    *   الموافقة على ميزانية إضافية بقيمة 300 دولار لتجربة قنوات إعلانية ممولة إضافية تستهدف أصحاب المقاهي والمطاعم في مدينة الرياض وجدة.
-*   **الهدف القادم**: الوصول لـ 10 مقاهي متكاملة بنهاية شهر يونيو.
-
----
-
-### [4D] استراتيجية التسعير (Pricing Strategy)
-
-#### 1. نموذج التسعير الموصى به
-**نموذج هجين (Hybrid Freemium + Usage-based)**:
-باقة مجانية محدودة لتشجيع المقاهي الصغيرة على البدء والربط دون تردد، ثم الانتقال لباقات مدفوعة تعتمد على عدد العملاء النشطين المسجلين في برنامج الولاء. هذا يزيل حاجز الخوف الأول للشراء ويجعلنا ننمو مالياً بالتزامن مع نمو أعمال العميل.
-
-#### 2. هيكل الفئات والأسعار المقترح
-
-```
-┌───────────────────────────┬───────────────────────────┬───────────────────────────┐
-│       باقة البداية        │        باقة النمو         │       باقة المحترفين      │
-│         Hobby             │          Growth           │            Pro            │
-│       $0 / شهرياً          │       $49 / شهرياً         │       $99 / شهرياً         │
-├───────────────────────────┼───────────────────────────┼───────────────────────────┤
-│• ربط فرع واحد             │• ربط حتى فرعين            │• ربط فروع غير محدودة      │
-│• حتى 100 عميل مسجل        │• حتى 2,000 عميل مسجل      │• عملاء غير محدودين        │
-│• بطاقات ولاء ورقمية عادية │• بطاقات المحفظة الذكية     │• بطاقات محفظة مخصصة بالكامل│
-│• عروض أساسية يدوية        │• الأتمتة الذكية للعودة    │• حملات مخصصة بالذكاء الاصطناعي│
-│• تكامل POS قياسي          │• إرسال رسائل SMS مجانية   │• ربط نطاق خاص وتصدير بيانات│
-│                           │  (حتى 200 رسالة شهرياً)    │• دعم فني مخصص 24/7        │
-└───────────────────────────┴───────────────────────────┴───────────────────────────┘
+Weekly Active Loyals (WAL)
+├── Active Merchants (Shops with >= 50 scans/week)
+│   ├── Merchant Retention Rate
+│   └── Barista Scan Rate (% of transactions scanned)
+└── Repeat Customer Scans
+    ├── New Wallet Passes Installed
+    │   ├── Landing Page QR Scans
+    │   └── Wallet Installation Conversion Rate
+    └── Re-engagement CTR
+        ├── Automated SMS Delivery Rate
+        └── SMS Link Click-Through Rate
 ```
 
-#### 3. مبرر معيار القيمة (Value Metric)
-تم اختيار **"عدد العملاء النشطين المسجلين (Active Loyalty Customers)"** كمعيار قيمة، لأن قيمة النظام تزداد طردياً كلما زادت قاعدة بيانات المقهى وزادت قدرته على التسويق لهم. لا نلجأ لفرض رسوم على إجمالي دخل المقهى أو عدد العمليات لمنع إشعار العميل بأننا نقتطع من أرباحه الصافية.
-
-#### 4. إستراتيجية اختبار التسعير في أول 90 يوماً
-سنقدم فترة تجريبية مجانية لمدة 30 يوماً بكامل ميزات باقة **Growth** لجميع المشتركين الجدد. هذا يساعدهم على رؤية الأثر المالي الحقيقي وإعادتنا لعملائهم الغائبين قبل مطالبتهم بدفع أول فاتورة اشتراك.
-
----
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المرحلة 5 — التعلم والتكيف (PHASE 5 — LEARN)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-### [5A] تشخيص الانقطاع والاحتفاظ (Retention & Churn Diagnosis)
-
-#### 1. السيناريو المفترض (بعد 30 يوماً من الإطلاق)
-معدل الاحتفاظ بالعملاء النهائيين (B2C) بعد الزيارة الأولى منخفض ويبلغ 25% فقط (بينما المستهدف هو 45%). العملاء يسجلون في المرة الأولى للحصول على خصم الترحيب ولكنهم لا يعودون لاستخدام النقاط أو العروض اللاحقة.
-
-#### 2. الأسباب الثلاثة الأكثر احتمالية للركود
-1.  **غياب الحافز السريع (Lack of Short-Term Incentive)**: المكافأة الأولى بعيدة جداً (مثال: يحتاج العميل لشراء 10 أكواب ليحصل على كوب مجاني)، مما يجعل العميل يشعر بالملل ويفقد الاهتمام مبكراً.
-2.  **فشل قنوات الوصول (Reachability Failure)**: العميل لم ينزل بطاقة المحفظة الرقمية، ورسائل الـ SMS يتم تصفيتها تلقائياً كرسائل سبام على هاتفه، مما يجعله ينسى وجود برنامج الولاء بالكامل.
-3.  **عدم تذكير الباريستا للعملاء**: انشغال الباريستا في أوقات الذروة يمنعه من سؤال العميل الجديد: "هل لديك حساب ولاء معنا؟" لتسجيل معاملاته اللاحقة.
-
-#### 3. تدقيق لحظة الـ "Aha!"
-الـ "Aha!" الحقيقية للمستهلك ليست التسجيل في البرنامج؛ بل هي **"لحظة تلقي العميل خصماً أو كوباً مجانياً فورياً واستخدامه بنجاح عند الكاشير لأول مرة"**. يجب أن نضمن وصول العميل لأول مكافأة صغيرة جداً (مثل دونات مجاني بعد الزيارة الثانية مباشرة) لترسيخ سلوك الولاء.
-
-#### 4. 5 تجارب فورية لتحسين الاحتفاظ (Retention Experiments)
-
-| اسم التجربة | الفرضية | المتغير المقترح | التأثير المتوقع | الجهد |
-| :--- | :--- | :--- | :--- | :--- |
-| **مكافأة الزيارة الثانية السريعة** | تقديم مكافأة سريعة بعد زيارتين يزيد الاحتفاظ بنسبة 20% | إعطاء خصم 50% على الكوب الثاني خلال 4 أيام من الزيارة الأولى | مرتفع | منخفض (إعداد حملة) |
-| **دفع تنبيهات المحفظة (Wallet Push Notifications)** | إرسال تنبيه مجاني يظهر على شاشة الهاتف المغلقة أفضل من الـ SMS | استخدام تنبيهات المحفظة المعتمدة على الموقع الجغرافي عند الاقتراب | متوسط | متوسط |
-| **حافز الباريستا اليومي** | مكافأة الباريستا على التسجيل تزيد من تفاعلهم مع الزبائن | مسابقة للموظفين: الباريستا الذي يسجل أكبر عدد عملاء يحصل على مكافأة | مرتفع | منخفض |
-| **تقليل حقول التسجيل** | تقليل حقول تعبئة البيانات يزيد من معدل الإتمام | إزالة الاسم والبريد في المرة الأولى والاكتفاء برقم الجوال فقط | مرتفع | منخفض |
-| **عروض فترات الركود المخصصة** | إرسال عروض لأوقات محددة يعيد العملاء في فترات الركود | خصم 30% فقط بين الساعة 2 ظهراً و 5 عصراً للزبون المعتاد على الصباح | متوسط | متوسط |
-
-#### 5. خطة المراسلة والاتصال لدورة حياة المستخدم (First 30 Days Email/SMS)
-*   **اليوم 1**: رسالة ترحيبية فورية: *"أهلاً بك في نادي BeanLoyal للمقهى [اسم المقهى]. اضغط هنا لتثبيت بطاقتك الرقمية في محفظتك وحصلت على 10 نقاط ترحيبية مجاناً!"*
-*   **اليوم 3**: إرسال تذكير في حال عدم تثبيت بطاقة المحفظة: *"وفر مساحة هاتفك! نقرة واحدة وتظهر بطاقتك عند الكاشير تلقائياً. اضغط هنا للتنزيل."*
-*   **اليوم 7**: رسالة عاطفية مبنية على عدم الزيارة: *"اشتقنا لك في [اسم المقهى]. قهوتك المفضلة تنتظرك، تفضل بزيارتنا هذا الأسبوع واستخدم الكود [CODE] للحصول على ترقية مجانية لحجم الكوب."*
-*   **اليوم 14**: تذكير بالنقاط قبل انتهائها: *"لديك 40 نقطة في حسابك في [اسم المقهى]. أنت على بعد خطوتين فقط من الحصول على كوب كورتادو مجاني!"*
-*   **اليوم 30**: ملخص الإنجاز الشهري (ROI): *"أنت بطل القهوة هذا الشهر! وفرت 15 دولاراً وحصلت على كوبين مجانيين. ننتظرك في زيارتك القادمة."*
+#### Day 1 Events to Instrument
+1. `merchant_account_created` (Properties: `shop_name`, `country`, `pos_type`)
+2. `wallet_pass_installed` (Properties: `platform_ios_android`, `shop_id`)
+3. `loyalty_point_accrued` (Properties: `shop_id`, `points_added`, `barista_id`)
+4. `reward_redeemed` (Properties: `shop_id`, `reward_type`, `points_spent`)
+5. `reengagement_sms_sent` (Properties: `campaign_type`, `customer_id`)
 
 ---
 
-### [5B] مذكرة القرار الصعب والتعامل مع المقايضات (Trade-off Decision Memo)
+### [2B] PRODUCT REQUIREMENTS DOCUMENT (PRD)
 
-#### الموقف
-نحن في اليوم 45 بعد الإطلاق. واجهنا مشكلة بطء وبطء كبير في تزامن البيانات مع نقاط البيع خلال ساعات الصباح المزدحمة (بين 8 و 10 صباحاً)، مما سبب بعض الشكاوى من الباريستا. في نفس الوقت، يضغط قسم التسويق والمبيعات لإطلاق ميزة "عروض الولاء للمجموعات والشركات" لإنهاء صفقة تعاقد مع سلسلة مقاهي كبرى ستدر دخل شهري مهم.
+#### 1. Problem Statement
+Small, independent coffee shops lose customer retention to large chains (like Starbucks) because they cannot afford custom mobile apps or complex loyalty database systems. Paper punch cards fail to capture customer contact info, are frequently lost, and are subject to barista fraud.
 
-فريق الهندسة يقول: *"يمكننا إما إيقاف التطوير وإعادة هيكلة كود التزامن وحل مشكلة الأداء، أو بناء ميزة المجموعات الجديدة. لا يمكننا فعل الأمرين معاً في السبرينت القادم."*
+#### 2. Goals & Non-Goals
+* **Goals (30/60/90 Days)**:
+  - *30 Days*: Launch MVP merchant tablet app and Apple/Google Wallet pass generator.
+  - *60 Days*: Onboard 15 local pilot cafes; achieve a 20% wallet pass install rate among their customers.
+  - *90 Days*: Launch first automated SMS re-engagement campaign feature; hit a 15% return rate for lapsed users.
+* **Non-Goals**:
+  - Building a customer-facing native app (we use native Apple/Google Wallet).
+  - Processing card payments directly (we sit parallel to the POS).
 
-#### ورقة تحليل الخيارات والمقايضات
+#### 3. Success Metrics
+* North Star: **Weekly Active Loyals (WAL)** > 1,500 by Month 3.
+* Merchant Net Promoter Score (NPS) > 60.
 
-*   **الخيار أ (إصلاح الأداء وبطء المزامنة أولاً)**:
-    *   *المكاسب*: حماية سمعة المنتج، ثقة الباريستا وأصحاب المقاهي الحاليين، استقرار النظام وتفادي سقوط الكاشيرات.
-    *   *التضحيات*: تأخير صفقة السلسلة الكبرى لمدة أسبوعين على الأقل، مما قد يعرضنا لخطر فقدان اهتمامهم.
-    *   *درجة التراجع عن القرار*: مرتفعة (إذا أصلحنا الأداء، فهو استثمار بنيوي دائم لا نخسره).
-    *   *مستوى الخطورة*: منخفض على المدى الطويل، لكنه مؤلم للمبيعات الفورية.
+#### 4. User Stories
 
-*   **الخيار ب (بناء ميزة الشركات والمجموعات أولاً لشراء العقد الجديد)**:
-    *   *المكاسب*: إتمام الصفقة، زيادة فورية في الإيرادات المتكررة (MRR) بنسبة 40%.
-    *   *التضحيات*: زيادة المشاكل التقنية في فترات الصباح للمشتركين الحاليين، مما قد يؤدي لالغائهم للاشتراك والتقييمات السلبية للباريستا.
-    *   *درجة التراجع عن القرار*: منخفضة جداً (البناء على بنية تحتية غير مستقرة يهدد بانهيار النظام بالكامل لاحقاً وتراكم الديون التقنية).
-    *   *مستوى الخطورة*: **عالٍ جداً** (تعطل الكاشير في الصباح هو خط أحمر للمقاهي قد يدفعهم لإلغاء التعاقد فوراً).
+| Story ID | User Story | Priority | Acceptance Criteria |
+|---|---|---|---|
+| **US-01** | As a barista, I want to scan a customer's digital pass using a tablet camera so that I can award points in under 3 seconds. | P0 | - Scanner must launch in < 1 sec.<br>- Play a distinct success tone.<br>- Increase customer point balance instantly in the local database. |
+| **US-02** | As a customer, I want to scan a receipt QR code to install the loyalty pass directly into Apple/Google Wallet. | P0 | - QR redirect must open mobile-friendly landing page.<br>- "Add to Apple Wallet" button must generate a secure `.pkpass` file. |
+| **US-03** | As an owner, I want to define my shop's reward threshold (e.g., 10 points = Free Coffee) from a settings page. | P0 | - Input validation prevents zero or negative thresholds.<br>- Changes update all active customer passes in real-time. |
+| **US-04** | As an owner, I want to view a daily dashboard of total scans, new members, and rewards claimed. | P1 | - Data must load in < 2 sec.<br>- Display comparisons to the previous week's performance. |
+| **US-05** | As the system, I want to automatically send an SMS to customers who haven't visited in 7 days to offer a discount. | P1 | - Check daily for inactive profiles.<br>- Do not send SMS if user opted out.<br>- Include a unique tracking code. |
 
-#### التوصية والقرار النهائي
-نحن نوصي بالذهاب مع **الخيار أ (إصلاح الأداء وبطء المزامنة أولاً)**. 
-*السبب*: في قطاع الأغذية والمشروبات (F&B)، يُعد استقرار الكاشير وسرعة المعاملة أمراً مقدساً. إذا تسبب نظامنا في تعطيل طابور الصباح للمقاهي الحالية، فسوف نخسر سمعتنا وتلغي المقاهي اشتراكها بشكل جماعي. لا يمكننا البناء والتسويق لمنتج غير مستقر.
+#### 5. Technical Considerations
+- **Offline Mode**: If the shop's Wi-Fi drops, the merchant scanner must queue scans locally and sync to the cloud once connection is restored.
+- **Pass Syncing**: Real-time push notifications are sent to update the point balances displayed on the customer's lock screen.
 
-#### مسودة المذكرة المرسلة للمدير التنفيذي (CEO Memo)
-```
-إلى: المدير التنفيذي لـ BeanLoyal
-من: إدارة المنتجات
-الموضوع: مقايضة أولويات السبرينت القادم: استقرار النظام vs. ميزة المجموعات للشركات
+#### 6. Edge Cases & Risks
 
-نود إعلامكم بقرارنا بتخصيص السبرينت القادم (السبرينت رقم 4) بالكامل لإصلاح أداء مزامنة بيانات الكاشير وحل مشاكل البطء الصباحي، وتأجيل إطلاق ميزة المجموعات الجديدة لمدة 10 أيام عمل.
+| Risk / Edge Case | Severity | Mitigation Strategy |
+|---|---|---|
+| Customer scans the same QR code multiple times to cheat points. | **High** | Generate dynamic, single-use checkout QR codes on the merchant tablet. |
+| No internet connection during peak rush. | **Medium** | Store transactions in local IndexedDB; sync asynchronously in the background. |
+| User deletes the Wallet Pass. | **Low** | Send an SMS notification offering a recovery link to reinstall the pass. |
 
-لقد واجهنا بطء في الاستجابة تجاوز 4 ثوانٍ خلال فترات الذروة الصباحية هذا الأسبوع في مقهيين من مقاهينا الشريكة. في قطاع المقاهي، تعطل الكاشير أو تأخر المعاملة يعني خسارة فورية للعملاء، وهو ما يمثل خطاً أحمر لأصحاب الأعمال. المضي قدماً في إطلاق ميزات جديدة دون معالجة هذا الأساس التقني سيعرضنا لخطر خسارة عملائنا الحاليين وتشويه سمعة العلامة التجارية قبل التوسع.
-
-لقد تواصلنا مع السلسلة الكبرى المهتمة بميزة المجموعات، وقدمنا لهم عرضاً فنياً محدثاً، ووعدناهم بتقديم لوحة اختبار مخصصة ومستقرة في الأول من يوليو. لقد تفهموا تماماً رغبتنا في ضمان أقصى درجات الاستقرار قبل إطلاق الميزة لهم.
-
-نتحمل كامل المسؤولية عن هذا التأجيل القصير، ونثق أن هذه الخطوة ستحمي بنيتنا التحتية وتضمن تجربة استخدام سلسة للباريستا والعملاء على حد سواء.
-```
-
----
-
-### [5C] خارطة طريق المنتج لمدة 6 أشهر (6-Month Product Roadmap)
-
-#### 1. المرحلة 1 (الشهر 1-2): الأساس والاستقرار (MVP & Core Loops)
-*   **الميزات الرئيسية**: تكامل POS بنقرة واحدة لـ Square و Foodics، تسجيل العميل برقم الجوال، إرسال نقاط تلقائي، بطاقات المحفظة الرقمية لـ Apple/Google.
-*   **مؤشر النجاح وهدفه**: نسبة إتمام تسجيل العملاء الجدد عند الكاشير تتجاوز 40% من إجمالي الفواتير الصادرة.
-*   **المخاطر والحلول**: بطء API نقاط البيع -> استخدام معالجة غير متزامنة (Async Event Queues) لتحديث النقاط في الخلفية دون تعطيل الكاشير.
-
-#### 2. المرحلة 2 (الشهر 3-4): التفاعل والنمو (Activation & Automation Loops)
-*   **الميزات الرئيسية**: محرك الأتمتة الذكي للعروض (Win-back campaigns, Birthday triggers)، لوحة تحكم عروض فترات الركود، إرسال العروض عبر قنوات متعددة (WhatsApp/SMS).
-*   **مؤشر النجاح وهدفه**: استرداد 15% من العروض التلقائية المرسلة لزيادة وتيرة الزيارة للمقهى.
-*   **المخاطر والحلول**: ارتفاع تكاليف رسائل الـ SMS -> إتاحة التنبيهات المجانية عبر المحفظة الرقمية وتكامل رسائل الواتساب الأرخص تكلفة.
-
-#### 3. المرحلة 3 (الشهر 5-6): الاستبقاء وتحقيق الأرباح (Retention & Scale monetization)
-*   **الميزات الرئيسية**: إطلاق نظام الباقات المدفوعة، تقارير الأثر المالي المتطورة للملاك، ميزة ولاء المجموعات والشركات لزيادة المبيعات المجمعة، محرك التوصيات المقتنع بالذكاء الاصطناعي لاقتراح خصومات مخصصة تلقائياً.
-*   **مؤشر النجاح وهدفه**: الوصول إلى 100 مقهى نشط ودخل متكرر شهري (MRR) بقيمة 5,000 دولار.
-*   **المخاطر والحلول**: زيادة الشكاوى من تعقيد لوحة التحكم -> فصل الميزات المتقدمة وإخفائها خلف باقة Pro للحفاظ على بساطة الباقة الأساسية.
-
-#### 4. مؤشر النجم القطبي للمرحلة كاملة
-*   **المؤشر**: عدد زيارات العملاء المتكررة المحفزة بواسطة النظام شهرياً.
-*   **الهدف**: الوصول لـ 10,000 زيارة متكررة شهرياً بنهاية الشهر السادس.
-
-#### 5. قائمة الميزات التي يتم إسقاطها أولاً عند حدوث تأخير في الجدول الزمني
-*   لوحة تقارير الأثر المالي المتطورة (يمكن استبدالها مؤقتاً بتقرير بريد إلكتروني مبسط يرسل يدوياً لمالك المقهى نهاية كل أسبوع).
-*   محرك التوصيات بالذكاء الاصطناعي (استخدام قواعد ثابتة وسيطة في البداية).
+#### 7. Open Questions
+- Will Apple/Google charge registration fees for issuing Wallet Passes at scale? *(Assumed: No, standard developer account covers pass signing certificates)*.
 
 ---
 
-### [5D] تقرير ما بعد الكارثة والتحقيق بلطف (Post-Mortem Report)
+### [2C] FEATURE PRIORITIZATION (RICE)
 
-#### 1. ملخص الكارثة (Executive Summary)
-في يوم 12 يونيو 2026، بين الساعة 08:15 AM و 09:45 AM (فترة ذروة مبيعات الصباح)، واجه نظامنا انقطاعاً كلياً أدى لعدم قدرة الباريستا في 8 مقاهٍ تجريبية على تسجيل نقاط العملاء أو استرداد الجوائز، مما أدى لتراكم طوابير الدفع والاضطرار لتسجيل المعاملات يدوياً على أوراق خارجية. تأثر بالحادثة ما يقرب من 420 عميلاً وتمت استعادة الخدمة بالكامل بنجاح بحلول الساعة 09:50 AM بعد زيادة طاقة الخادم وإعادة هيكلة الاتصالات.
+#### Feature List
+1. **Wallet Pass Generator (iOS/Android)**
+2. **Barista Tablet Scanner App**
+3. **Admin Settings Dashboard**
+4. **Automated SMS Re-engagement Engine**
+5. **Dynamic QR Code Display (Anti-Fraud)**
+6. **Customer Web Portal (Pass Management)**
 
-#### 2. الجدول الزمني المفصل للحادثة (Incident Timeline)
-*   **08:15 AM**: بدء رصد ارتفاع كبير في عدد الأخطاء من نوع `504 Gateway Timeout` على خوادم الـ API الخاصة بنا.
-*   **08:25 AM**: أول بلاغ من باريستا مقهى "Cup & Steam" يفيد بتوقف استجابة شاشة الولاء عند الكاشير بالكامل.
-*   **08:35 AM**: إعلان حالة طوارئ فنية داخلية (Sev-1) واستدعاء فريق التطوير DevOps لحل المشكلة.
-*   **08:45 AM**: اكتشاف قفل وتكدس لقاعدة البيانات (Database Connection Pool Exhaustion) بسبب عدد هائل من طلبات المزامنة الفورية المرسلة من نقاط بيع متعددة في نفس الوقت.
-*   **09:15 AM**: ترقية سعة خوادم قاعدة البيانات مؤقتاً وفصل خدمة إرسال الـ SMS مؤقتاً لتخفيف الحمل على معالجة البيانات الأساسية.
-*   **09:40 AM**: نشر تعديل فوري للكود (Hotfix) يطبق حد أقصى للاتصالات المتزامنة ويعالج المعاملات بنظام الطابور غير المتزامن (Queue-based throttling).
-*   **09:45 AM**: انخفاض الأخطاء لـ 0% وبدء عودة استجابة الأنظمة لطبيعتها.
-*   **09:50 AM**: تأكيد استقرار المزامنة بالكامل في جميع الفروع المتأثرة.
+#### RICE Matrix
 
-#### 3. تحليل السبب الجذري (The 5 Whys)
-1.  **لماذا توقف الكاشير عن الاستجابة للولاء؟** لأن الطلبات المرسلة من POS لنظامنا كانت تنتهي بالمهلة (Timeout).
-2.  **لماذا انتهت الطلبات بالمهلة؟** لأن خادم الـ API الخاص بنا كان ينتظر دوراً للاتصال بقاعدة البيانات التي كانت مستهلكة بالكامل.
-3.  **لماذا كانت قاعدة البيانات مستهلكة بالكامل؟** لأنها كانت تنفذ عمليات قراءة وكتابة متزامنة ثقيلة في نفس اللحظة للتحقق من رصيد النقاط وتحديثه وتوليد كود الخصم للعميل الجديد فوراً.
-4.  **لماذا تمت العمليات بشكل فوري وثقيل متزامن؟** لأننا صممنا نظام معالجة النقاط ليعمل متزامناً (Synchronous API Call) في نفس مسار عملية الدفع للتأكد من تحديث النقاط أمام العميل فوراً.
-5.  **لماذا لم يكن هناك نظام طوابير لمعالجة البيانات بشكل منفصل؟** لأننا قمنا بتطوير ميزة المزامنة بأسرع طريقة ممكنة للمرحلة التجريبية وتجاهلنا تطبيق نظام إدارة طوابير المهام (Job Queue System مثل Redis/BullMQ) لتوفير الوقت في السبرينت الأول.
+| Feature | Reach (Monthly) | Impact (0.25-3) | Confidence (%) | Effort (Weeks) | RICE Score | Rank |
+|---|---|---|---|---|---|---|
+| **1. Wallet Pass Generator** | 10,000 | 3.0 | 100% | 4 | **7,500** | **1** |
+| **2. Barista Tablet Scanner** | 8,000 | 3.0 | 90% | 3 | **7,200** | **2** |
+| **3. Admin Settings** | 500 | 1.5 | 100% | 2 | **375** | **5** |
+| **4. SMS Engine** | 3,000 | 2.0 | 80% | 3 | **1,600** | **3** |
+| **5. Dynamic QR (Anti-Fraud)** | 8,000 | 1.0 | 50% | 3 | **1,333** | **4** |
+| **6. Customer Web Portal** | 1,000 | 0.5 | 80% | 4 | **100** | **6** |
 
-#### 4. العوامل المساهمة في زيادة حجم المشكلة (Contributing Factors)
-*   الافتقار لنظام مراقبة وتنبيه تلقائي يخبر الفريق بارتفاع استهلاك الـ DB قبل وصولها للمستوى الحرج 100%.
-*   عدم كتابة مهلة محددة وقصيرة (Timeout Limit) لطلب نقاط البيع، مما جعل الكاشير ينتظر الاتصال لوقت طويل ويعيق عملية المحاسبة.
-
-#### 5. ما الذي سار بشكل جيد أثناء الأزمة؟
-*   سرعة استجابة المطورين وتواجدهم الفوري لحل المشكلة خلال 10 دقائق من أول بلاغ.
-*   الباريستا تصرفوا بذكاء وسجلوا أرقام هواتف العملاء وقيمة فواتيرهم على نوتة ورقية لإدخالها لاحقاً لضمان عدم ضياع حقوق العملاء.
-
-#### 6. قرارات العمل الفورية لمنع التكرار (SMART Action Items)
-
-| البند | خطة العمل | المسؤول | تاريخ الانتهاء |
-| :--- | :--- | :--- | :--- |
-| **ACT-001** | فصل معالجة تحديث النقاط وحملات الأتمتة وجعلها عملية غير متزامنة بالكامل باستخدام Redis Queue. | مطور الـ Backend | 18 يونيو |
-| **ACT-002** | تطبيق حد أقصى لوقت استجابة الـ API في نقاط البيع لا يتجاوز 1.5 ثانية؛ إذا لم يستجب النظام يتم تمرير الفاتورة فوراً وحفظها في الـ Cache للمزامنة اللاحقة لتفادي تعطيل الطابور. | مطور الـ POS | 19 يونيو |
-| **ACT-003** | إنشاء وتفعيل لوحة تنبيهات على Slack ترسل تحذيراً فورياً إذا تجاوز استهلاك الـ DB نسبة 80%. | مهندس الـ DevOps | 17 يونيو |
-| **ACT-004** | تدريب جميع فروع المقاهي الشريكة على "بروتوكول الطوارئ الأوفلاين" (تسجيل يدوي مؤقت للأرقام في حال انقطاع الخدمة). | مسؤول نجاح العملاء | 20 يونيو |
-| **ACT-005** | إدخال اختبارات فحص الأداء والتحمل (Load Testing) ضمن قائمة فحص الكود قبل دمجه بشكل نهائي لمنع تكرار مشاكل فترات الذروة. | مسؤول الجودة QA | 22 يونيو |
-
-#### 7. مسودة رسالة الاعتذار للعملاء المتأثرين (User Apology Email)
-```
-العنوان: نعتذر عن الإزعاج الصباحي - قهوتك القادمة علينا ☕
-
-عزيزنا عميل [اسم المقهى]،
-
-في صباح يوم أمس الأربعاء، ربما لاحظت تأخراً أو صعوبة في تسجيل نقاط الولاء الخاصة بك أثناء طلب قهوتك الصباحية المعتادة. 
-
-نحن في BeanLoyal نتحمل المسؤولية الكاملة عن هذا الخلل. لقد واجهت أنظمتنا ضغطاً غير متوقع في معالجة البيانات أدى لتوقف مزامنة النقاط لمدة 90 دقيقة قبل أن يتدخل فريقنا الهندسي ويعيد تشغيل النظام بشكل أكثر استقراراً وسرعة.
-
-تمت مزامنة جميع زياراتكم ونقاطكم المسجلة يدوياً أمس بنجاح إلى حساباتكم الآن. وكاعتذار بسيط منا ومن مقهاك المفضل عن هذا التأخير، قمنا بإضافة "كوب قهوة مجاني" كهدية في حسابك تستطيع استردادها في زيارتك القادمة بمجرد إبراز رقم هاتفك للكاشير.
-
-شكراً لصبرك ولدعمك الدائم لمقاهينا المحلية، ونعدك بمواصلة العمل لتقديم أفضل وأسرع تجربة ولاء تستحقها.
-
-فريق BeanLoyal للتقنية
-```
+**Recommendation to Ship in Sprint 1**:
+Features **1 (Wallet Pass Generator)**, **2 (Barista Scanner)**, and **3 (Admin Settings)**. These constitute the absolute Minimum Viable Product (MVP) needed to launch a live test.
 
 ---
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## المخرجات النهائية — ملخص المنتج في صفحة واحدة (One-Page Brief)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### [2D] COMPETITOR TEARDOWN: SQUARE LOYALTY
 
-### **BeanLoyal CRM: نظام إدارة علاقات العملاء الذكي للمقاهي المستقلة**
+#### 1. Onboarding Flow
+- *Steps*: Merchant enables the add-on in Square Dashboard -> Customer types their phone number on the customer-facing checkout screen -> Confirm via SMS link.
+- *Friction*: Typing a phone number on a physical terminal screen while a line forms behind you creates significant social pressure.
+- *Aha Moment*: The instant SMS receipt confirming the customer has earned their first point.
 
-*   **المشكلة (في جملة واحدة)**: المقاهي المستقلة تفقد 45% من عملائها بعد أول زيارة لغياب أدوات تسويق وولاء ذكية ومؤتمتة تساعدها على منافسة السلاسل الكبرى.
-*   **الحل (في جملة واحدة)**: منصة CRM تسويقية تتكامل بنقرة واحدة مع أنظمة نقاط البيع (POS) الحالية لجمع بيانات العملاء وإعادة تنشيطهم تلقائياً بعروض مخصصة عبر بطاقات محفظة الجوال والـ SMS.
-*   **المستخدم المستهدف (في جملة واحدة)**: ملاك ومدراء المقاهي المستقلة الباحثين عن زيادة الزيارات المتكررة، والباريستا المشغولين، والعملاء اليوميين الساعين لبرنامج ولاء بسيط بلا تعقيد.
-*   **الفجوة التسويقية المستهدفة (في جملة واحدة)**: غياب حلول أتمتة تسويقية ذكية ومفتوحة الربط تطلق حملات إعادة تنشيط العملاء تلقائياً بناءً على فترات ركود المبيعات وسلوك الشراء الفعلي.
-*   **مؤشر النجم القطبي والهدف الحالي**: 
-    *   *المؤشر*: عدد زيارات العملاء المتكررة التي يحفزها النظام شهرياً.
-    *   *الهدف الحالي*: تحقيق 2,000 زيارة متكررة إضافية للمقاهي الـ 20 الأولى المشاركة بحلول نهاية الشهر الثاني.
-*   **أهم 3 ميزات بالترتيب**:
-    1.  **ربط فوري ونشط مع POS**: تكامل ذكي لسحب أحداث المعاملات وتحديث النقاط في أقل من ثانيتين.
-    2.  **تسجيل مبسط عند الكاشير**: تجميع نقاط واسترداد جوائز برقم الجوال فقط مع بطاقة Apple & Google Wallet ذكية ومحدثة تلقائياً.
-    3.  **محرك الأتمتة لإعادة التنشيط**: إرسال عروض ترويجية مخصصة للعميل المنقطع لأكثر من 14 يوماً لإعادته فوراً للمقهى.
-*   **خلاصة خارطة الطريق لـ 6 أشهر**:
-    *   *الأشهر 1-2 (الأساس)*: الربط بالـ POS، إطلاق بطاقات المحفظة، تسجيل الزبائن بكفاءة واستقرار أداء الكاشير.
-    *   *الأشهر 3-4 (النمو)*: إطلاق حملات إعادة التنشيط الآلية وعروض أوقات الركود اليومية.
-    *   *الأشهر 5-6 (التوسع)*: نظام الباقات المدفوعة، تقارير العائد المالي للملاك، وعروض المجموعات للشركات.
-*   **الخطر الأكبر وكيفية مواجهته**:
-    *   *الخطر*: رفض أو تباطؤ الباريستا في تسجيل العملاء أثناء طابور الصباح مما يؤدي لفشل اعتماد البرنامج.
-    *   *المواجهة*: تقليل وقت الفحص البرمجي ليكون أقل من ثانيتين وتصميم مسابقات تحفيزية ومكافآت للباريستا بناءً على عدد الاشتراكات المحققة.
-*   **ماذا يمثل النجاح في الشهر السادس**: ربط 100 مقهى نشط، تسجيل 20,000 عميل نهائي، وتحقيق دخل متكرر شهري (MRR) بقيمة 5,000 دولار مع نسبة رضا ملاك المقاهي (CSAT) تتجاوز 90%.
+#### 2. Retention Loops
+- Automated reminder text messages sent when points are near a reward milestone.
+- Integrates directly with Square Email Marketing.
+
+#### 3. Monetization
+- $45/location/month flat subscription. This eats into the margins of tiny shops doing less than $10k/month in revenue.
+
+#### 4. Weakness to Exploit
+Square requires merchants to use their POS. If a boutique shop uses another checkout method, cash, or a different processor, they cannot access Square Loyalty. **BeanFlow wins by being hardware and payment-method agnostic.**
+
+#### 5. Competitive Playbook
+- *What we steal*: The simple phone number/SMS confirmation logic for onboarding.
+- *What we do differently*: We bypass checkout terminal typing by using a simple **Scan-to-Wallet** QR pass, transferring the input friction to the customer's own smartphone.
+
+---
+
+# PHASE 3 — BUILD
+
+### [3A] USER STORIES + ACCEPTANCE CRITERIA (MVP Top 3)
+
+#### Feature 1: Wallet Pass Generator (US-02)
+* **User Story**: As a customer, I want to scan a receipt QR code so that I can add the coffee shop's loyalty card to my phone's native Wallet app without downloading a dedicated app.
+* **Acceptance Criteria**:
+  - GIVEN a mobile browser opens the QR landing page, WHEN the user clicks "Add to Wallet", THEN the server must compile a valid Apple PKPass file containing the shop's logo, colors, and a unique barcode.
+  - GIVEN an Android device, WHEN the user installs the pass, THEN the system must render the pass correctly in Google Wallet.
+* **Definition of Done**: Pass generated passes Apple SDK validation checks; scans successfully on physical scanners; renders customer name and dynamic barcode.
+
+#### Feature 2: Barista Tablet Scanner App (US-01)
+* **User Story**: As a barista, I want to scan a customer's wallet barcode using my tablet's front-facing camera so that I can reward points instantly.
+* **Acceptance Criteria**:
+  - GIVEN the scanner app is open, WHEN a customer pass is presented, THEN the camera must scan the Aztec/PDF417 barcode in under 1.5 seconds under standard cafe lighting conditions.
+  - GIVEN a successful scan, WHEN the points update, THEN the screen must flash green and play a high-frequency success sound.
+* **Definition of Done**: Local DB logs the scan; offline fallback stores scans in local storage; API latency is under 300ms.
+
+#### Feature 3: Admin Settings Dashboard (US-03)
+* **User Story**: As a shop owner, I want to set my loyalty rules (points per dollar, reward threshold) from a web dashboard.
+* **Acceptance Criteria**:
+  - GIVEN the admin dashboard settings page, WHEN I change the reward threshold to 8 points and save, THEN all future customers must require 8 points to trigger a reward.
+  - GIVEN existing customer passes, WHEN settings are updated, THEN the system must push a background update to all active passes in Apple/Google servers.
+* **Definition of Done**: DB schema updated; push notification sync script executes successfully; validation checks prevent saving negative point values.
+
+---
+
+### [3B] UNIT TEST CASES (Barista Tablet Scanner App)
+
+| Test ID | Test Name | Preconditions | Steps | Expected Result | Type | Priority |
+|---|---|---|---|---|---|---|
+| **TC-001** | Happy Path Scan | Camera active; valid customer pass presented. | 1. Hold pass barcode in front of camera.<br>2. Wait for beep. | Pass scanned; points balance increments by 1; success tone plays. | Functional | P1 |
+| **TC-002** | Offline Scanning | Tablet disconnected from Wi-Fi. | 1. Present valid pass barcode.<br>2. Confirm scan. | Scan saved in local queue; success tone plays; UI warns "Sync Pending". | Resilience | P1 |
+| **TC-003** | Duplicate Scan Limit | Pass scanned 2 seconds ago. | 1. Present the same pass barcode immediately again. | UI displays "Scan Ignored: Duplicate check" warning; point balance unchanged. | Edge Case | P1 |
+| **TC-004** | Invalid Barcode Type | Random barcode (e.g. UPC code on a box). | 1. Hold UPC code in front of camera. | Scanner rejects; displays "Invalid Pass Format"; plays error buzz. | Negative | P2 |
+| **TC-005** | Low Light Scan | Ambient light < 50 lux. | 1. Present pass barcode in dark corner. | App automatically increases tablet screen brightness to assist scanning. | Usability | P2 |
+| **TC-006** | Expired Pass | Pass marked inactive in database. | 1. Present inactive/disabled pass. | App alerts "Pass Expired/Disabled"; no points awarded. | Negative | P1 |
+| **TC-007** | Concurrent Scans | Multi-tablet setups scanning same pass. | 1. Scan pass on Tablet A.<br>2. Scan same pass on Tablet B at same second. | DB registers only one scan; second scan returns validation error. | Concurrency | P2 |
+| **TC-008** | Incomplete Data payload | Corrupt QR payload scan. | 1. Scan partially damaged/corrupt QR. | UI reports "Read Error: Please try scanning again." | Negative | P2 |
+| **TC-009** | XSS Injection Check | QR payload containing Javascript payload. | 1. Scan a QR pass carrying a code injection payload. | Payload treated as plain text string; input sanitized; system remains secure. | Security | P1 |
+| **TC-010** | Unauthorized Tablet | De-registered tablet device. | 1. Attempt scan on tablet whose token was revoked. | API rejects request with 401 Unauthorized; local interface locks down. | Security | P1 |
+
+---
+
+### [3C] SPRINT PLAN (Sprint 1)
+
+* **Sprint Goal**: *"Enable a barista to scan a digital wallet pass and successfully update point balances on a mobile device."*
+* **Estimated Velocity**: 24 Story Points.
+* **Team Capacity**: 3 Developers (1 Frontend, 1 Backend, 1 Full-Stack) + 1 Product Manager/Scrum Master.
+* **Commitment Backlog**:
+  - `US-01`: Barista Tablet Scanner UI & Camera Logic (8 points)
+  - `US-02`: Apple Wallet Pass compilation API (8 points)
+  - `US-03`: Basic merchant settings schema and update page (5 points)
+  - `SPIKE`: Offline data storage research on Android (3 points)
+* **Risk Mitigation (Days 1-3)**: The Apple `.pkpass` compilation certificate registration is our highest risk. The backend engineer must complete this setup on Day 1 to ensure developers have mock passes for testing.
+* **Definition of Sprint Success**: A working tablet app mockup scans a newly generated wallet pass, updating the backend database with zero errors.
+
+---
+
+# PHASE 4 — SHIP
+
+### [4A] GO-TO-MARKET (GTM) PLAN
+
+#### 1. Launch Goals (30/60/90 Days)
+- **30 Days**: 10 coffee shops live in the local metro area; 500 active customer passes installed.
+- **60 Days**: 30 coffee shops live; >2,000 active customer passes.
+- **90 Days**: Monthly recurring revenue (MRR) of $1,200; less than 5% monthly merchant churn.
+
+#### 2. Target Wedge Segment
+- Independent, single-location coffee shops located in student-dense urban districts. These shops have tech-savvy clienteles and are highly motivated to offer digital programs to compete with national chains.
+
+#### 3. Messaging Framework
+- **Headline**: *Starbucks-grade loyalty passes, built for independent coffee shops.*
+- **Sub-headline**: *Give your customers digital wallet loyalty passes in seconds. No apps to download, no hardware to replace. Start driving repeat visits on autopilot.*
+- **Key Benefits**:
+  - *Boost Visits*: Automate SMS reminders to bring back lapsed regulars.
+  - *Zero App Friction*: Pass downloads instantly into Apple & Google Wallet.
+  - *Simple Setup*: Runs on any standard tablet at your counter.
+
+#### 4. Channel Strategy
+1. **Direct Outbound (Foot Campaign)**: PM and sales lead walk into target cafes during slow afternoon hours (2-4 PM) to demo the app directly to owners.
+2. **Local Cafe Owners Facebook/Reddit Groups**: Share case studies of early pilot metrics.
+3. **Barista Referral Network**: Offer a $50 gift card to any local barista who introduces us to their shop owner.
+
+#### 5. Pre-Launch Readiness Checklist
+- [x] Apple Developer Enterprise account certificates active.
+- [x] Twilio API production account set up with SMS compliance registry.
+- [x] Printed merchant starter kits (QR code acrylic stands) ready for distribution.
+- [x] Terms of service and privacy policy uploaded.
+- [x] Staging/UAT environment tests completed.
+- [x] Customer support hotline and email ticket system live.
+- [x] Security audit on point validation API completed.
+- [x] Telemetry dashboards in Amplitude verified.
+
+#### 6. Launch Day Playbook (Day 1)
+* **07:00 AM**: Confirm server status; monitor real-time API logs.
+- **08:00 AM**: On-site support at our first 3 pilot shops during morning rush.
+- **12:00 PM**: Send launch announcement newsletter to local business registries.
+- **03:00 PM**: Run social media launch announcement campaigns.
+- **06:00 PM**: Conduct post-rush debrief with pilot shop baristas to gather UI feedback.
+- **09:00 PM**: Review day 1 telemetry metrics (total scans, installs, error logs).
+
+#### 7. Kill Criteria
+- System crash rates exceed 1% of total API calls.
+- Customer pass validation latency exceeds 5 seconds.
+
+---
+
+### [4B] A/B TEST PLAN
+
+#### Test 1: Sign-Up Flow Opt-in Friction
+* **Hypothesis**: *We believe that asking for only the customer's phone number during pass download will result in a 25% increase in completed sign-ups compared to asking for phone number AND email, because reducing input fields decreases cognitive friction.*
+* **Control (A)**: Inputs required: Name, Phone, and Email.
+* **Variant (B)**: Inputs required: Phone number only (with optional name field).
+* **Primary Metric**: Wallet installation conversion rate.
+* **Guardrail Metric**: Opt-out rate of SMS alerts (checks if lack of email leads to higher SMS churn).
+* **Sample Size**: 800 visitors per variant.
+
+#### Test 2: In-Store Call-to-Action Messaging
+* **Hypothesis**: *We believe that a QR stand offering a concrete reward ("Scan to start earning your free coffee") will drive higher conversion than a generic brand message ("Join our digital loyalty club") because it highlights immediate time-to-value.*
+* **Control (A)**: "Join our digital loyalty club! Scan here."
+* **Variant (B)**: "Get a free espresso on your next visit! Scan to join."
+* **Primary Metric**: QR Code scan-to-visit CTR.
+* **Guardrail**: Reward cost margins (makes sure offering free items doesn't drain shop margins).
+* **Sample Size**: 1,200 store visits per variant.
+
+---
+
+### [4C] STAKEHOLDER UPDATE (Launch Week)
+
+> **TL;DR**: BeanFlow CRM is live in 5 pilot shops; initial customer adoption metrics are exceeding targets by 15%.
+> 
+> **RAG Status**: **GREEN**
+> - Setup and deployments completed on time. System latency is healthy at 180ms.
+> 
+> **Key Progress This Week**:
+> - Completed production deployments for Merchant App and Apple Wallet API.
+> - Onboarded 5 local pilot cafes in the university district.
+> - Recorded 142 unique wallet pass installs and 89 loyalty point transactions.
+> 
+> **Risks on Radar**:
+> - *Twilio SMS delivery latency*: SMS verification codes delayed on certain carriers.
+>   - *Owner*: Backend Engineer. *Mitigation*: Enable carrier fallback routing; ETA: Friday.
+> 
+> **Ask from Leadership**:
+> - Approvals for an additional $500 monthly budget allocation for Twilio SMS messaging.
+> 
+> **Next Milestone**:
+> - Phase 2 rollout targeting 15 additional merchants by June 28th.
+
+---
+
+### [4D] PRICING STRATEGY
+
+#### 1. Recommended Model
+* **Hybrid Freemium/SaaS**: Free up to 100 customer passes per shop. Above 100 passes, the shop pays a flat monthly fee based on locations.
+* *Why?* Removes all risk for owners during onboarding, allowing them to validate the product's effectiveness before paying.
+
+#### 2. Tier Structure
+* **Hobbyist (Free)**: 1 location, up to 100 active members, basic digital stamp card.
+* **Growth ($29/month)**: 1 location, unlimited members, automated SMS re-engagement campaigns, basic dashboard.
+* **Pro ($59/month)**: Up to 3 locations, custom branding, API integrations, daily CSV data exports.
+
+#### 3. Value Metric
+* **Number of Active Locations**: Small business owners think of their costs in terms of store locations, making this the most intuitive axis to charge on.
+
+#### 4. Anchoring Strategy
+The **Growth Tier ($29/mo)** is highlighted in green on the pricing page with the label "Best Value for Local Cafes," anchored against the $59/mo Pro tier and the much higher costs of competitor POS loyalty systems ($45-$50/month).
+
+---
+
+# PHASE 5 — LEARN
+
+### [5A] CHURN & RETENTION DIAGNOSIS
+
+#### 1. Churn Diagnosis (Top 3 Root Causes)
+- **Barista Friction**: Baristas stop asking customers to scan because the scanning process takes too long or bugs out, causing the customer to abandon the pass.
+- **No Value Realization**: Customers download the pass but forget they have it because the shop rarely updates its loyalty offers or sends updates.
+- **In-App Navigation Issues**: Merchants find the dashboard UI confusing and stop checking their stats.
+
+#### 2. The "Aha!" Moment Audit
+- A customer reaches their "Aha!" moment when they **accrue their 3rd loyalty point within 10 days of pass installation**. At this stage, visiting the shop has become a habit, and retention rates increase by 45%.
+
+#### 3. 5 Retention Experiments
+1. **Push Notifications on Lockscreen**: Display point updates and reminders directly on the phone's lock screen when the user walks near the shop (geofencing).
+2. **Barista Incentive Leaderboard**: Show a weekly tally of scans per barista in the merchant app, awarding a coffee bag to the top performer to encourage scan promotion.
+3. **Day 3 Check-in SMS**: Automatically text a customer on Day 3 if they haven't visited, saying: *"Your favorite brew misses you. Stop by this week for 10% off."*
+4. **Instant Double Points Promo**: Award double points on the customer's second visit to accelerate them to their 3rd point habit threshold.
+5. **Interactive Quick-Scan Widget**: Build a tablet home-screen widget to let baristas launch the scanner with a single tap.
+
+#### 4. Lifecycle Message Strategy
+- **Day 1**: Welcome SMS: *"Thanks for joining BeanFlow! Show your card at check out to get closer to your free cup."*
+- **Day 3**: Educational SMS highlighting that the card is safely stored in their phone's native Apple/Google Wallet.
+- **Day 7**: Progress reminder: *"You're only 3 points away from your free espresso! See you tomorrow?"*
+- **Day 14**: Re-engagement offer: *"We haven't seen you in a week! Show this text to your barista for a free pastry upgrade with your coffee."*
+- **Day 30**: Monthly impact digest sent to owners, showing them how much extra revenue BeanFlow generated for their shop.
+
+---
+
+### [5B] TRADE-OFF DECISION
+
+#### Context
+At Day 45 post-launch, engineering reports a resource constraint: we can either fix a critical local DB sync bug that causes offline tablet scans to delay, or build the scheduled automated SMS campaign feature.
+
+#### Options Analysis
+* **Option A: Fix Local DB Sync Bug**:
+  - *Gains*: Clean database metrics; eliminates barista frustration; protects core usability during peak rush hours.
+  - *Losses*: Delays the marketing features needed to prove customer retention loops.
+  - *Reversibility*: High. *Risk*: Low.
+* **Option B: Build SMS Marketing Feature**:
+  - *Gains*: Provides owners with the re-engagement tool they have been requesting.
+  - *Losses*: Unsynchronized scans will continue to delay, causing customer disputes over point balances.
+  - *Reversibility*: Medium. *Risk*: High (bugs at the checkout counter will kill store manager trust).
+
+#### Recommendation
+**Fix the local DB sync bug first (Option A)**. 
+*Rationale*: A loyalty system's success relies on trust at the cash register. If a customer's point balance is wrong or delays because of a sync bug, it creates transaction friction. In F&B, speed and accuracy at checkout are critical. We must ensure our foundation is stable before layering on marketing features.
+
+#### Decision Memo (To: CEO)
+> **Subject: Prioritizing checkout reliability over SMS marketing features**
+> 
+> We have decided to delay the release of our automated SMS marketing module by 1 sprint to prioritize fixing a local DB synchronization issue affecting our merchant scanner. Over the last 7 days, we recorded 12 checkout delays due to unsynced local transaction records. If a customer's points fail to update instantly during the morning rush, checkout lines slow down, and we risk losing store manager trust. We will dedicate this sprint to making the scanner system robust, resuming work on the SMS marketing features in the following sprint.
+
+---
+
+### [5C] 6-MONTH ROADMAP
+
+#### Phase 1 (Months 1-2): Foundation
+- Features: Core Wallet Pass compiler, Merchant Android/iOS Scanner app, settings portal.
+- Success Metric: **WAL** > 500; transaction latency under 2 seconds.
+- Risk: Delayed Apple Developer account approvals. *Mitigation*: Run early pilots using Google Wallet and web passes.
+
+#### Phase 2 (Months 3-4): Engagement & Growth
+- Features: Dynamic QR codes (anti-fraud), automated SMS check-ins, barista incentives.
+- Success Metric: Wallet pass install rate > 25%.
+- Risk: Twilio SMS pricing limits. *Mitigation*: Add email fallbacks.
+
+#### Phase 3 (Months 5-6): Retention & Monetization
+- Features: Multi-location merchant accounts, premium pricing tier gating, Stripe integrations.
+- Success Metric: $2,000 MRR; merchant churn < 3%.
+- Risk: Incumbents (Square) lowering add-on pricing. *Mitigation*: Focus on our standalone, payment-processor-agnostic value proposition.
+
+* **North Star Metric (Month 6 Target)**: **WAL** > 5,000.
+* **What Gets Cut If Behind**: Multi-location merchant accounts (we will focus exclusively on single-location boutiques).
+
+---
+
+### [5D] POST-MORTEM (Double-Reward Exploit)
+
+#### Executive Summary
+On June 10th, an exploit was discovered where customers could receive double points by scanning their pass barcode simultaneously on two tablets at the same register. This affected 4 pilot shops and led to 32 illegitimate free coffee redemptions before the exploit was patched. The issue was resolved by implementing a centralized transaction locking database.
+
+#### Root Cause (5 Whys)
+1. *Why did customers get double points?* They scanned their passes on two separate tablets at the same time.
+2. *Why did the tablets accept both scans?* Each tablet processed the transaction locally before syncing with the database.
+3. *Why did they process locally without verifying?* To support offline operations, the scanner app updates the local cache before running the server API call.
+4. *Why did the server accept both synced transactions?* The server lacked a validation check to block transactions with identical timestamps.
+5. *Why was this validation check missing?* The team prioritized development speed for the offline sync feature, omitting timestamp checks.
+
+#### Contributing Factors
+- Lack of QA concurrency tests during staging.
+- Shop layouts placing two registers closer together than expected.
+
+#### What Went Well
+- The engineering team detected the anomaly and deployed a database lock hotfix within 4 hours of the first support ticket.
+
+#### Action Items
+
+| Action Item | Target Date | Owner |
+|---|---|---|
+| Implement centralized redis lock on point-accrual API. | Completed | Lead Backend |
+| Add a 60-second cooldown window to same-user scan API calls. | June 15 | Frontend Dev |
+| Build automated concurrency tests into our CI/CD pipeline. | June 20 | QA Engineer |
+| Reimburse affected merchants for the cost of the exploited coffee. | June 14 | Product Manager |
+
+#### Process Change
+We now require all feature specs that modify account balances (points, rewards, cash) to undergo a mandatory concurrency architecture review before engineering begins.
+
+#### Customer Communication Template
+> **Subject: Security Patch Deployment and System Update**
+> 
+> We recently identified a software error that affected point balance sync times in your shop yesterday. Our team has deployed a security update to resolve this issue and prevent any duplicate transactions. We have corrected the affected customer logs. As part of our commitment to your business, BeanFlow will reimburse your shop for the cost of any excess rewards claimed during this period. Thank you for your patience as we build a more secure system for your business.
+
+---
+
+## FINAL DELIVERABLE — THE ONE-PAGE BRIEF
+
+* **The Problem**: Independent coffee shops lack affordable, digital tools to track customer retention, forcing them to rely on fragile paper punch cards that capture no user data.
+* **The Solution**: BeanFlow CRM — a digital stamp card that installs directly into native Apple/Google Wallets via QR scan, paired with automated SMS marketing tools for the shop owner.
+* **The User**: Boutique, independent coffee shop owners, store managers, and their checkout baristas.
+* **The Market Gap**: A simple, loyalty pass system that runs standalone on any tablet next to the register, without requiring deep integrations into complex POS hardware.
+* **North Star Metric**: **Weekly Active Loyals (WAL)**. *Target*: 5,000 active customer scans by Month 6.
+* **Top 3 Features**:
+  1. *Scan-to-Wallet Pass compiler*: Renders passes directly into Apple/Google Wallet.
+  2. *One-tap Barista Scanner*: An ultra-fast scanner app for merchant tablets.
+  3. *Automated SMS engine*: Sends re-engagement texts to inactive regulars.
+* **6-Month Roadmap Summary**:
+  - *Month 1-2*: Launch MVP tablet scanner and Wallet pass generator.
+  - *Month 3-4*: Roll out dynamic QR codes and automated SMS campaigns.
+  - *Month 5-6*: Introduce multi-location support and premium pricing tiers.
+* **Biggest Risk & Mitigation**: Barista scanning fatigue causing checkout delays. We mitigate this by keeping the scan interface simple, and testing camera scan speeds weekly to keep latency under 1.5 seconds.
+* **Success at Month 6**: 50 active merchants onboarded, 5,000+ active customers using the system, and less than 3% monthly merchant churn.
